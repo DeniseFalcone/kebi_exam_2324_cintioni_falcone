@@ -1,0 +1,2227 @@
+@prefix : <http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix cintioni: <http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#> .
+@base <http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise/> .
+
+<http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+swrla:isRuleEnabled rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#hasIngredients
+cintioni:hasIngredients rdf:type owl:ObjectProperty ;
+                        owl:inverseOf cintioni:isInMeal ;
+                        rdfs:domain cintioni:Meal ;
+                        rdfs:range cintioni:Ingredient .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#isInMeal
+cintioni:isInMeal rdf:type owl:ObjectProperty ;
+                  rdfs:domain cintioni:Ingredient ;
+                  rdfs:range cintioni:Meal .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#MealHasGluten
+cintioni:MealHasGluten rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf owl:topDataProperty ;
+                       rdfs:domain cintioni:Meal ;
+                       rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#MealHasLactose
+cintioni:MealHasLactose rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf owl:topDataProperty ;
+                        rdfs:domain cintioni:Meal ;
+                        rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#MealIsVegetarian
+cintioni:MealIsVegetarian rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf owl:topDataProperty ;
+                          rdfs:domain cintioni:Meal ;
+                          rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#hasCalories
+cintioni:hasCalories rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:domain cintioni:Meal ;
+                     rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#hasGluten
+cintioni:hasGluten rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain cintioni:Ingredient ;
+                   rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#hasLactose
+cintioni:hasLactose rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain cintioni:Ingredient ;
+                    rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#hasName
+cintioni:hasName rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain owl:Thing ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#isVegetarian
+cintioni:isVegetarian rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf owl:topDataProperty ;
+                      rdfs:domain cintioni:Ingredient ;
+                      rdfs:range xsd:boolean .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#GlutenIngredient
+cintioni:GlutenIngredient rdf:type owl:Class ;
+                          rdfs:subClassOf cintioni:Ingredient ;
+                          owl:disjointWith cintioni:NoGlutenIngredient .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#GlutenMeal
+cintioni:GlutenMeal rdf:type owl:Class ;
+                    rdfs:subClassOf cintioni:Meal ;
+                    owl:disjointWith cintioni:NoGlutenMeal .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#HighCaloriesMeal
+cintioni:HighCaloriesMeal rdf:type owl:Class ;
+                          rdfs:subClassOf cintioni:Meal .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Ingredient
+cintioni:Ingredient rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseIngredient
+cintioni:LactoseIngredient rdf:type owl:Class ;
+                           rdfs:subClassOf cintioni:Ingredient ;
+                           owl:disjointWith cintioni:NoLactoseIngredient .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseMeal
+cintioni:LactoseMeal rdf:type owl:Class ;
+                     rdfs:subClassOf cintioni:Meal ;
+                     owl:disjointWith cintioni:NoLactoseMeal .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LowCaloriesMeal
+cintioni:LowCaloriesMeal rdf:type owl:Class ;
+                         rdfs:subClassOf cintioni:Meal .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Meal
+cintioni:Meal rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#MediumCaloriesMeal
+cintioni:MediumCaloriesMeal rdf:type owl:Class ;
+                            rdfs:subClassOf cintioni:Meal .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#NoGlutenIngredient
+cintioni:NoGlutenIngredient rdf:type owl:Class ;
+                            rdfs:subClassOf cintioni:Ingredient .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#NoGlutenMeal
+cintioni:NoGlutenMeal rdf:type owl:Class ;
+                      rdfs:subClassOf cintioni:Meal .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#NoLactoseIngredient
+cintioni:NoLactoseIngredient rdf:type owl:Class ;
+                             rdfs:subClassOf cintioni:Ingredient .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#NoLactoseMeal
+cintioni:NoLactoseMeal rdf:type owl:Class ;
+                       rdfs:subClassOf cintioni:Meal .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#NoVegIngredient
+cintioni:NoVegIngredient rdf:type owl:Class ;
+                         rdfs:subClassOf cintioni:Ingredient ;
+                         owl:disjointWith cintioni:VegIngredient .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#NoVegMeal
+cintioni:NoVegMeal rdf:type owl:Class ;
+                   rdfs:subClassOf cintioni:Meal ;
+                   owl:disjointWith cintioni:VegMeal .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#VegIngredient
+cintioni:VegIngredient rdf:type owl:Class ;
+                       rdfs:subClassOf cintioni:Ingredient .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#VegMeal
+cintioni:VegMeal rdf:type owl:Class ;
+                 rdfs:subClassOf cintioni:Meal .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Apple
+cintioni:Apple rdf:type owl:NamedIndividual ,
+                        cintioni:Ingredient ,
+                        cintioni:NoGlutenIngredient ,
+                        cintioni:NoLactoseIngredient ,
+                        cintioni:VegIngredient ;
+               cintioni:isInMeal cintioni:Macedonia ;
+               cintioni:hasGluten "false"^^xsd:boolean ;
+               cintioni:hasLactose "false"^^xsd:boolean ;
+               cintioni:hasName "Apple" ;
+               cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#AranciniAlProsciutto
+cintioni:AranciniAlProsciutto rdf:type owl:NamedIndividual ,
+                                       cintioni:GlutenMeal ,
+                                       cintioni:LactoseMeal ,
+                                       cintioni:Meal ,
+                                       cintioni:MediumCaloriesMeal ,
+                                       cintioni:NoVegMeal ;
+                              cintioni:hasIngredients cintioni:Bread ,
+                                                      cintioni:Flour ,
+                                                      cintioni:Ham ,
+                                                      cintioni:Mozzarella ,
+                                                      cintioni:Rice ,
+                                                      cintioni:Salt ,
+                                                      cintioni:Water ;
+                              cintioni:MealHasGluten "true"^^xsd:boolean ;
+                              cintioni:MealHasLactose "true"^^xsd:boolean ;
+                              cintioni:MealIsVegetarian "false"^^xsd:boolean ;
+                              cintioni:hasCalories "Medium" ;
+                              cintioni:hasName "Arancini al prosciutto" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#AranciniAlRagu
+cintioni:AranciniAlRagu rdf:type owl:NamedIndividual ,
+                                 cintioni:GlutenMeal ,
+                                 cintioni:HighCaloriesMeal ,
+                                 cintioni:LactoseMeal ,
+                                 cintioni:Meal ,
+                                 cintioni:NoVegMeal ;
+                        cintioni:hasIngredients cintioni:Beef ,
+                                                cintioni:Bread ,
+                                                cintioni:Flour ,
+                                                cintioni:Mozzarella ,
+                                                cintioni:Onion ,
+                                                cintioni:Rice ,
+                                                cintioni:Salt ,
+                                                cintioni:TomatoSauce ,
+                                                cintioni:Water ;
+                        cintioni:MealHasGluten "true"^^xsd:boolean ;
+                        cintioni:MealHasLactose "true"^^xsd:boolean ;
+                        cintioni:MealIsVegetarian "false"^^xsd:boolean ;
+                        cintioni:hasCalories "High" ;
+                        cintioni:hasName "Arancini al ragù" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#AranciniVegetariani
+cintioni:AranciniVegetariani rdf:type owl:NamedIndividual ,
+                                      cintioni:GlutenMeal ,
+                                      cintioni:LactoseMeal ,
+                                      cintioni:Meal ,
+                                      cintioni:MediumCaloriesMeal ,
+                                      cintioni:VegMeal ;
+                             cintioni:hasIngredients cintioni:Bread ,
+                                                     cintioni:Flour ,
+                                                     cintioni:Mozzarella ,
+                                                     cintioni:Oil ,
+                                                     cintioni:Onion ,
+                                                     cintioni:Rice ,
+                                                     cintioni:Salt ,
+                                                     cintioni:TomatoSauce ,
+                                                     cintioni:Water ;
+                             cintioni:MealHasGluten "true"^^xsd:boolean ;
+                             cintioni:MealHasLactose "true"^^xsd:boolean ;
+                             cintioni:MealIsVegetarian "true"^^xsd:boolean ;
+                             cintioni:hasCalories "Medium" ;
+                             cintioni:hasName "Arancini vegetariani" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#ArrostoCarne
+cintioni:ArrostoCarne rdf:type owl:NamedIndividual ,
+                               cintioni:Meal ,
+                               cintioni:MediumCaloriesMeal ,
+                               cintioni:NoGlutenMeal ,
+                               cintioni:NoLactoseMeal ,
+                               cintioni:NoVegMeal ;
+                      cintioni:hasIngredients cintioni:Beef ,
+                                              cintioni:Lemon ,
+                                              cintioni:Oil ,
+                                              cintioni:Rosemary ,
+                                              cintioni:Salt ,
+                                              cintioni:Sausage ;
+                      cintioni:MealHasGluten "false"^^xsd:boolean ;
+                      cintioni:MealHasLactose "false"^^xsd:boolean ;
+                      cintioni:MealIsVegetarian "false"^^xsd:boolean ;
+                      cintioni:hasCalories "Medium" ;
+                      cintioni:hasName "Arrosto di carne" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#ArrostoPesce
+cintioni:ArrostoPesce rdf:type owl:NamedIndividual ,
+                               cintioni:Meal ,
+                               cintioni:MediumCaloriesMeal ,
+                               cintioni:NoGlutenMeal ,
+                               cintioni:NoLactoseMeal ,
+                               cintioni:VegMeal ;
+                      cintioni:hasIngredients cintioni:Lemon ,
+                                              cintioni:Oil ,
+                                              cintioni:Rosemary ,
+                                              cintioni:Salmon ,
+                                              cintioni:Salt ,
+                                              cintioni:Seabass ;
+                      cintioni:MealHasGluten "false"^^xsd:boolean ;
+                      cintioni:MealHasLactose "false"^^xsd:boolean ;
+                      cintioni:MealIsVegetarian "true"^^xsd:boolean ;
+                      cintioni:hasCalories "Medium" ;
+                      cintioni:hasName "Arrosto di pesce" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Avocado
+cintioni:Avocado rdf:type owl:NamedIndividual ,
+                          cintioni:Ingredient ,
+                          cintioni:NoGlutenIngredient ,
+                          cintioni:NoLactoseIngredient ,
+                          cintioni:VegIngredient ;
+                 cintioni:isInMeal cintioni:Tartare ;
+                 cintioni:hasGluten "false"^^xsd:boolean ;
+                 cintioni:hasLactose "false"^^xsd:boolean ;
+                 cintioni:hasName "Avocado" ;
+                 cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Bacon
+cintioni:Bacon rdf:type owl:NamedIndividual ,
+                        cintioni:Ingredient ,
+                        cintioni:NoGlutenIngredient ,
+                        cintioni:NoLactoseIngredient ,
+                        cintioni:NoVegIngredient ;
+               cintioni:isInMeal cintioni:Carbonara ,
+                                 cintioni:PizzaPatateBacon ;
+               cintioni:hasGluten "false"^^xsd:boolean ;
+               cintioni:hasLactose "false"^^xsd:boolean ;
+               cintioni:hasName "Bacon" ;
+               cintioni:isVegetarian "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Beef
+cintioni:Beef rdf:type owl:NamedIndividual ,
+                       cintioni:Ingredient ,
+                       cintioni:NoGlutenIngredient ,
+                       cintioni:NoLactoseIngredient ,
+                       cintioni:NoVegIngredient ;
+              cintioni:isInMeal cintioni:AranciniAlRagu ,
+                                cintioni:ArrostoCarne ,
+                                cintioni:GrigliataCarne ,
+                                cintioni:MelanzaneRipiene ,
+                                cintioni:RavioliRagu ,
+                                cintioni:ScaloppineFunghi ;
+              cintioni:hasGluten "false"^^xsd:boolean ;
+              cintioni:hasLactose "false"^^xsd:boolean ;
+              cintioni:hasName "Beef" ;
+              cintioni:isVegetarian "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Bread
+cintioni:Bread rdf:type owl:NamedIndividual ,
+                        cintioni:GlutenIngredient ,
+                        cintioni:Ingredient ,
+                        cintioni:NoLactoseIngredient ,
+                        cintioni:VegIngredient ;
+               cintioni:isInMeal cintioni:AranciniAlProsciutto ,
+                                 cintioni:AranciniAlRagu ,
+                                 cintioni:AranciniVegetariani ,
+                                 cintioni:MelanzaneRipiene ;
+               cintioni:hasGluten "true"^^xsd:boolean ;
+               cintioni:hasLactose "false"^^xsd:boolean ;
+               cintioni:hasName "Bread" ;
+               cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Carbonara
+cintioni:Carbonara rdf:type owl:NamedIndividual ,
+                            cintioni:GlutenMeal ,
+                            cintioni:HighCaloriesMeal ,
+                            cintioni:LactoseMeal ,
+                            cintioni:Meal ,
+                            cintioni:NoVegMeal ;
+                   cintioni:hasIngredients cintioni:Bacon ,
+                                           cintioni:Egg ,
+                                           cintioni:Pasta ,
+                                           cintioni:Pecorino ;
+                   cintioni:MealHasGluten "true"^^xsd:boolean ;
+                   cintioni:MealHasLactose "true"^^xsd:boolean ;
+                   cintioni:MealIsVegetarian "false"^^xsd:boolean ;
+                   cintioni:hasCalories "High" ;
+                   cintioni:hasName "Carbonara" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Carrot
+cintioni:Carrot rdf:type owl:NamedIndividual ,
+                         cintioni:Ingredient ,
+                         cintioni:NoGlutenIngredient ,
+                         cintioni:NoLactoseIngredient ,
+                         cintioni:VegIngredient ;
+                cintioni:isInMeal cintioni:GnocchiSugoPapera ,
+                                  cintioni:Insalata ,
+                                  cintioni:InsalataRussa ,
+                                  cintioni:PizzaVegetariana ;
+                cintioni:hasGluten "false"^^xsd:boolean ;
+                cintioni:hasLactose "false"^^xsd:boolean ;
+                cintioni:hasName "Carrot" ;
+                cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Champignon
+cintioni:Champignon rdf:type owl:NamedIndividual ,
+                             cintioni:Ingredient ,
+                             cintioni:NoGlutenIngredient ,
+                             cintioni:NoLactoseIngredient ,
+                             cintioni:VegIngredient ;
+                    cintioni:isInMeal cintioni:PizzaBoscaiola ,
+                                      cintioni:PizzaNorcina ,
+                                      cintioni:PizzaVegetariana ,
+                                      cintioni:RisottoSalsicciaFunghi ,
+                                      cintioni:ScaloppineFunghi ;
+                    cintioni:hasGluten "false"^^xsd:boolean ;
+                    cintioni:hasLactose "false"^^xsd:boolean ;
+                    cintioni:hasName "Champignon" ;
+                    cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Clams
+cintioni:Clams rdf:type owl:NamedIndividual ,
+                        cintioni:Ingredient ,
+                        cintioni:NoGlutenIngredient ,
+                        cintioni:NoLactoseIngredient ,
+                        cintioni:VegIngredient ;
+               cintioni:isInMeal cintioni:PastaVongole ,
+                                 cintioni:RisottoVongole ;
+               cintioni:hasGluten "false"^^xsd:boolean ;
+               cintioni:hasLactose "false"^^xsd:boolean ;
+               cintioni:hasName "Clams" ;
+               cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Coffee
+cintioni:Coffee rdf:type owl:NamedIndividual ,
+                         cintioni:Ingredient ,
+                         cintioni:NoGlutenIngredient ,
+                         cintioni:NoLactoseIngredient ,
+                         cintioni:VegIngredient ;
+                cintioni:isInMeal cintioni:Tiramisu ;
+                cintioni:hasGluten "false"^^xsd:boolean ;
+                cintioni:hasLactose "false"^^xsd:boolean ;
+                cintioni:hasName "Coffee" ;
+                cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Duck
+cintioni:Duck rdf:type owl:NamedIndividual ,
+                       cintioni:Ingredient ,
+                       cintioni:NoGlutenIngredient ,
+                       cintioni:NoLactoseIngredient ,
+                       cintioni:NoVegIngredient ;
+              cintioni:isInMeal cintioni:GnocchiSugoPapera ;
+              cintioni:hasGluten "false"^^xsd:boolean ;
+              cintioni:hasLactose "false"^^xsd:boolean ;
+              cintioni:hasName "Duck" ;
+              cintioni:isVegetarian "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Egg
+cintioni:Egg rdf:type owl:NamedIndividual ,
+                      cintioni:Ingredient ,
+                      cintioni:NoGlutenIngredient ,
+                      cintioni:NoLactoseIngredient ,
+                      cintioni:VegIngredient ;
+             cintioni:isInMeal cintioni:Carbonara ,
+                               cintioni:GnocchiSugoPapera ,
+                               cintioni:InsalataRussa ,
+                               cintioni:PizzaNorcina ,
+                               cintioni:RavioliRagu ,
+                               cintioni:RavioliVegetariani ;
+             cintioni:hasGluten "false"^^xsd:boolean ;
+             cintioni:hasLactose "false"^^xsd:boolean ;
+             cintioni:hasName "Egg" ;
+             cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Eggplant
+cintioni:Eggplant rdf:type owl:NamedIndividual ,
+                           cintioni:Ingredient ,
+                           cintioni:NoGlutenIngredient ,
+                           cintioni:NoLactoseIngredient ,
+                           cintioni:VegIngredient ;
+                  cintioni:isInMeal cintioni:MelanzaneRipiene ,
+                                    cintioni:Parmigiana ,
+                                    cintioni:PizzaMelanzaneProsciutto ,
+                                    cintioni:PizzaVegetariana ,
+                                    cintioni:VerdureGrigliate ;
+                  cintioni:hasGluten "false"^^xsd:boolean ;
+                  cintioni:hasLactose "false"^^xsd:boolean ;
+                  cintioni:hasName "Eggplant" ;
+                  cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Flour
+cintioni:Flour rdf:type owl:NamedIndividual ,
+                        cintioni:GlutenIngredient ,
+                        cintioni:Ingredient ,
+                        cintioni:NoLactoseIngredient ,
+                        cintioni:VegIngredient ;
+               cintioni:isInMeal cintioni:AranciniAlProsciutto ,
+                                 cintioni:AranciniAlRagu ,
+                                 cintioni:AranciniVegetariani ,
+                                 cintioni:GnocchiSugoPapera ,
+                                 cintioni:PizzaBoscaiola ,
+                                 cintioni:PizzaMargherita ,
+                                 cintioni:PizzaMelanzaneProsciutto ,
+                                 cintioni:PizzaNorcina ,
+                                 cintioni:PizzaPatateBacon ,
+                                 cintioni:PizzaProsciutto ,
+                                 cintioni:PizzaSalmone ,
+                                 cintioni:PizzaVegetariana ,
+                                 cintioni:PizzaZucchineSalsiccia ,
+                                 cintioni:RavioliRagu ,
+                                 cintioni:RavioliVegetariani ,
+                                 cintioni:ScaloppineFunghi ;
+               cintioni:hasGluten "true"^^xsd:boolean ;
+               cintioni:hasLactose "false"^^xsd:boolean ;
+               cintioni:hasName "Flour" ;
+               cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#GnocchiSugoPapera
+cintioni:GnocchiSugoPapera rdf:type owl:NamedIndividual ,
+                                    cintioni:GlutenMeal ,
+                                    cintioni:HighCaloriesMeal ,
+                                    cintioni:LactoseMeal ,
+                                    cintioni:Meal ,
+                                    cintioni:NoVegMeal ;
+                           cintioni:hasIngredients cintioni:Carrot ,
+                                                   cintioni:Duck ,
+                                                   cintioni:Egg ,
+                                                   cintioni:Flour ,
+                                                   cintioni:Oil ,
+                                                   cintioni:Onion ,
+                                                   cintioni:Parmeasan ,
+                                                   cintioni:Potato ,
+                                                   cintioni:Salt ,
+                                                   cintioni:TomatoSauce ;
+                           cintioni:MealHasGluten "true"^^xsd:boolean ;
+                           cintioni:MealHasLactose "true"^^xsd:boolean ;
+                           cintioni:MealIsVegetarian "false"^^xsd:boolean ;
+                           cintioni:hasCalories "High" ;
+                           cintioni:hasName "Gnocchi al sugo di papera" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#GrigliataCarne
+cintioni:GrigliataCarne rdf:type owl:NamedIndividual ,
+                                 cintioni:LowCaloriesMeal ,
+                                 cintioni:Meal ,
+                                 cintioni:NoGlutenMeal ,
+                                 cintioni:NoLactoseMeal ,
+                                 cintioni:NoVegMeal ;
+                        cintioni:hasIngredients cintioni:Beef ,
+                                                cintioni:Lemon ,
+                                                cintioni:Oil ,
+                                                cintioni:Rosemary ,
+                                                cintioni:Salt ,
+                                                cintioni:Sausage ;
+                        cintioni:MealHasGluten "false"^^xsd:boolean ;
+                        cintioni:MealHasLactose "false"^^xsd:boolean ;
+                        cintioni:MealIsVegetarian "false"^^xsd:boolean ;
+                        cintioni:hasCalories "Low" ;
+                        cintioni:hasName "Grigliata di carne" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#GrigliataPesce
+cintioni:GrigliataPesce rdf:type owl:NamedIndividual ,
+                                 cintioni:LowCaloriesMeal ,
+                                 cintioni:Meal ,
+                                 cintioni:NoGlutenMeal ,
+                                 cintioni:NoLactoseMeal ,
+                                 cintioni:VegMeal ;
+                        cintioni:hasIngredients cintioni:Lemon ,
+                                                cintioni:Oil ,
+                                                cintioni:Rosemary ,
+                                                cintioni:Salmon ,
+                                                cintioni:Salt ,
+                                                cintioni:Seabass ;
+                        cintioni:MealHasGluten "false"^^xsd:boolean ;
+                        cintioni:MealHasLactose "false"^^xsd:boolean ;
+                        cintioni:MealIsVegetarian "true"^^xsd:boolean ;
+                        cintioni:hasCalories "Low" ;
+                        cintioni:hasName "Grigliata di pesce" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Ham
+cintioni:Ham rdf:type owl:NamedIndividual ,
+                      cintioni:Ingredient ,
+                      cintioni:NoGlutenIngredient ,
+                      cintioni:NoLactoseIngredient ,
+                      cintioni:NoVegIngredient ;
+             cintioni:isInMeal cintioni:AranciniAlProsciutto ,
+                               cintioni:PizzaMelanzaneProsciutto ,
+                               cintioni:PizzaProsciutto ,
+                               cintioni:Tagliere ;
+             cintioni:hasGluten "false"^^xsd:boolean ;
+             cintioni:hasLactose "false"^^xsd:boolean ;
+             cintioni:hasName "Ham" ;
+             cintioni:isVegetarian "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Insalata
+cintioni:Insalata rdf:type owl:NamedIndividual ,
+                           cintioni:LowCaloriesMeal ,
+                           cintioni:Meal ,
+                           cintioni:NoGlutenMeal ,
+                           cintioni:NoLactoseMeal ,
+                           cintioni:VegMeal ;
+                  cintioni:hasIngredients cintioni:Carrot ,
+                                          cintioni:Lettuce ,
+                                          cintioni:Oil ,
+                                          cintioni:Salt ,
+                                          cintioni:Tomato ;
+                  cintioni:MealHasGluten "false"^^xsd:boolean ;
+                  cintioni:MealHasLactose "false"^^xsd:boolean ;
+                  cintioni:MealIsVegetarian "true"^^xsd:boolean ;
+                  cintioni:hasCalories "Low" ;
+                  cintioni:hasName "Insalata" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#InsalataRussa
+cintioni:InsalataRussa rdf:type owl:NamedIndividual ,
+                                cintioni:HighCaloriesMeal ,
+                                cintioni:Meal ,
+                                cintioni:NoGlutenMeal ,
+                                cintioni:NoLactoseMeal ,
+                                cintioni:VegMeal ;
+                       cintioni:hasIngredients cintioni:Carrot ,
+                                               cintioni:Egg ,
+                                               cintioni:Mayonnaise ,
+                                               cintioni:Oil ,
+                                               cintioni:Peas ,
+                                               cintioni:Potato ,
+                                               cintioni:Salt ;
+                       cintioni:MealHasGluten "false"^^xsd:boolean ;
+                       cintioni:MealHasLactose "false"^^xsd:boolean ;
+                       cintioni:MealIsVegetarian "true"^^xsd:boolean ;
+                       cintioni:hasCalories "High" ;
+                       cintioni:hasName "Insalata russa" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Ketchup
+cintioni:Ketchup rdf:type owl:NamedIndividual ,
+                          cintioni:Ingredient ,
+                          cintioni:NoGlutenIngredient ,
+                          cintioni:NoLactoseIngredient ,
+                          cintioni:VegIngredient ;
+                 cintioni:isInMeal cintioni:PatatineFritte ;
+                 cintioni:hasGluten "false"^^xsd:boolean ;
+                 cintioni:hasLactose "false"^^xsd:boolean ;
+                 cintioni:hasName "Ketchup" ;
+                 cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Ladyfinger
+cintioni:Ladyfinger rdf:type owl:NamedIndividual ,
+                             cintioni:GlutenIngredient ,
+                             cintioni:Ingredient ,
+                             cintioni:NoLactoseIngredient ,
+                             cintioni:VegIngredient ;
+                    cintioni:isInMeal cintioni:Tiramisu ;
+                    cintioni:hasGluten "true"^^xsd:boolean ;
+                    cintioni:hasLactose "false"^^xsd:boolean ;
+                    cintioni:hasName "Ladyfinger" ;
+                    cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Lemon
+cintioni:Lemon rdf:type owl:NamedIndividual ,
+                        cintioni:Ingredient ,
+                        cintioni:NoGlutenIngredient ,
+                        cintioni:NoLactoseIngredient ,
+                        cintioni:VegIngredient ;
+               cintioni:isInMeal cintioni:ArrostoCarne ,
+                                 cintioni:ArrostoPesce ,
+                                 cintioni:GrigliataCarne ,
+                                 cintioni:GrigliataPesce ,
+                                 cintioni:Macedonia ,
+                                 cintioni:Tartare ;
+               cintioni:hasGluten "false"^^xsd:boolean ;
+               cintioni:hasLactose "false"^^xsd:boolean ;
+               cintioni:hasName "Lemon" ;
+               cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Lettuce
+cintioni:Lettuce rdf:type owl:NamedIndividual ,
+                          cintioni:Ingredient ,
+                          cintioni:NoGlutenIngredient ,
+                          cintioni:NoLactoseIngredient ,
+                          cintioni:VegIngredient ;
+                 cintioni:isInMeal cintioni:Insalata ;
+                 cintioni:hasGluten "false"^^xsd:boolean ;
+                 cintioni:hasLactose "false"^^xsd:boolean ;
+                 cintioni:hasName "Lettuce" ;
+                 cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Macedonia
+cintioni:Macedonia rdf:type owl:NamedIndividual ,
+                            cintioni:LowCaloriesMeal ,
+                            cintioni:Meal ,
+                            cintioni:NoGlutenMeal ,
+                            cintioni:NoLactoseMeal ,
+                            cintioni:VegMeal ;
+                   cintioni:hasIngredients cintioni:Apple ,
+                                           cintioni:Lemon ,
+                                           cintioni:Peach ,
+                                           cintioni:Strawberry ,
+                                           cintioni:Sugar ;
+                   cintioni:MealHasGluten "false"^^xsd:boolean ;
+                   cintioni:MealHasLactose "false"^^xsd:boolean ;
+                   cintioni:MealIsVegetarian "true"^^xsd:boolean ;
+                   cintioni:hasCalories "Low" ;
+                   cintioni:hasName "Macedonia" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Mascarpone
+cintioni:Mascarpone rdf:type owl:NamedIndividual ,
+                             cintioni:Ingredient ,
+                             cintioni:LactoseIngredient ,
+                             cintioni:NoGlutenIngredient ,
+                             cintioni:VegIngredient ;
+                    cintioni:isInMeal cintioni:Tiramisu ;
+                    cintioni:hasGluten "false"^^xsd:boolean ;
+                    cintioni:hasLactose "true"^^xsd:boolean ;
+                    cintioni:hasName "Mascarpone" ;
+                    cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Mayonnaise
+cintioni:Mayonnaise rdf:type owl:NamedIndividual ,
+                             cintioni:Ingredient ,
+                             cintioni:NoGlutenIngredient ,
+                             cintioni:NoLactoseIngredient ,
+                             cintioni:VegIngredient ;
+                    cintioni:isInMeal cintioni:InsalataRussa ,
+                                      cintioni:PatatineFritte ;
+                    cintioni:hasGluten "false"^^xsd:boolean ;
+                    cintioni:hasLactose "false"^^xsd:boolean ;
+                    cintioni:hasName "Mayonnaise" ;
+                    cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#MelanzaneRipiene
+cintioni:MelanzaneRipiene rdf:type owl:NamedIndividual ,
+                                   cintioni:GlutenMeal ,
+                                   cintioni:HighCaloriesMeal ,
+                                   cintioni:LactoseMeal ,
+                                   cintioni:Meal ,
+                                   cintioni:NoVegMeal ;
+                          cintioni:hasIngredients cintioni:Beef ,
+                                                  cintioni:Bread ,
+                                                  cintioni:Eggplant ,
+                                                  cintioni:Oil ,
+                                                  cintioni:Onion ,
+                                                  cintioni:Parmeasan ,
+                                                  cintioni:Salt ,
+                                                  cintioni:TomatoSauce ;
+                          cintioni:MealHasGluten "true"^^xsd:boolean ;
+                          cintioni:MealHasLactose "true"^^xsd:boolean ;
+                          cintioni:MealIsVegetarian "false"^^xsd:boolean ;
+                          cintioni:hasCalories "High" ;
+                          cintioni:hasName "Melanzane ripiene" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Mozzarella
+cintioni:Mozzarella rdf:type owl:NamedIndividual ,
+                             cintioni:Ingredient ,
+                             cintioni:LactoseIngredient ,
+                             cintioni:NoGlutenIngredient ,
+                             cintioni:VegIngredient ;
+                    cintioni:isInMeal cintioni:AranciniAlProsciutto ,
+                                      cintioni:AranciniAlRagu ,
+                                      cintioni:AranciniVegetariani ,
+                                      cintioni:Parmigiana ,
+                                      cintioni:PizzaBoscaiola ,
+                                      cintioni:PizzaMargherita ,
+                                      cintioni:PizzaMelanzaneProsciutto ,
+                                      cintioni:PizzaNorcina ,
+                                      cintioni:PizzaPatateBacon ,
+                                      cintioni:PizzaProsciutto ,
+                                      cintioni:PizzaSalmone ,
+                                      cintioni:PizzaVegetariana ,
+                                      cintioni:PizzaZucchineSalsiccia ,
+                                      cintioni:Tagliere ;
+                    cintioni:hasGluten "false"^^xsd:boolean ;
+                    cintioni:hasLactose "true"^^xsd:boolean ;
+                    cintioni:hasName "Mozzarella" ;
+                    cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Oil
+cintioni:Oil rdf:type owl:NamedIndividual ,
+                      cintioni:Ingredient ,
+                      cintioni:NoGlutenIngredient ,
+                      cintioni:NoLactoseIngredient ,
+                      cintioni:VegIngredient ;
+             cintioni:isInMeal cintioni:AranciniVegetariani ,
+                               cintioni:ArrostoCarne ,
+                               cintioni:ArrostoPesce ,
+                               cintioni:GnocchiSugoPapera ,
+                               cintioni:GrigliataCarne ,
+                               cintioni:GrigliataPesce ,
+                               cintioni:Insalata ,
+                               cintioni:InsalataRussa ,
+                               cintioni:MelanzaneRipiene ,
+                               cintioni:Parmigiana ,
+                               cintioni:PastaSalmonePomodoro ,
+                               cintioni:PastaVongole ,
+                               cintioni:PatateForno ,
+                               cintioni:PatatineFritte ,
+                               cintioni:PizzaBoscaiola ,
+                               cintioni:PizzaMargherita ,
+                               cintioni:PizzaMelanzaneProsciutto ,
+                               cintioni:PizzaNorcina ,
+                               cintioni:PizzaPatateBacon ,
+                               cintioni:PizzaProsciutto ,
+                               cintioni:PizzaSalmone ,
+                               cintioni:PizzaVegetariana ,
+                               cintioni:PizzaZucchineSalsiccia ,
+                               cintioni:RavioliRagu ,
+                               cintioni:RavioliVegetariani ,
+                               cintioni:RisottoSalsicciaFunghi ,
+                               cintioni:RisottoVongole ,
+                               cintioni:ScaloppineFunghi ,
+                               cintioni:VerdureGrigliate ;
+             cintioni:hasGluten "false"^^xsd:boolean ;
+             cintioni:hasLactose "false"^^xsd:boolean ;
+             cintioni:hasName "Oil" ;
+             cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Onion
+cintioni:Onion rdf:type owl:NamedIndividual ,
+                        cintioni:Ingredient ,
+                        cintioni:NoGlutenIngredient ,
+                        cintioni:NoLactoseIngredient ,
+                        cintioni:VegIngredient ;
+               cintioni:isInMeal cintioni:AranciniAlRagu ,
+                                 cintioni:AranciniVegetariani ,
+                                 cintioni:GnocchiSugoPapera ,
+                                 cintioni:MelanzaneRipiene ,
+                                 cintioni:Parmigiana ,
+                                 cintioni:PizzaVegetariana ,
+                                 cintioni:RavioliRagu ,
+                                 cintioni:RavioliVegetariani ,
+                                 cintioni:RisottoSalsicciaFunghi ;
+               cintioni:hasGluten "false"^^xsd:boolean ;
+               cintioni:hasLactose "false"^^xsd:boolean ;
+               cintioni:hasName "Onion" ;
+               cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Parmeasan
+cintioni:Parmeasan rdf:type owl:NamedIndividual ,
+                            cintioni:Ingredient ,
+                            cintioni:LactoseIngredient ,
+                            cintioni:NoGlutenIngredient ,
+                            cintioni:VegIngredient ;
+                   cintioni:isInMeal cintioni:GnocchiSugoPapera ,
+                                     cintioni:MelanzaneRipiene ,
+                                     cintioni:Parmigiana ,
+                                     cintioni:Tagliere ;
+                   cintioni:hasGluten "false"^^xsd:boolean ;
+                   cintioni:hasLactose "true"^^xsd:boolean ;
+                   cintioni:hasName "Parmeasan" ;
+                   cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Parmigiana
+cintioni:Parmigiana rdf:type owl:NamedIndividual ,
+                             cintioni:HighCaloriesMeal ,
+                             cintioni:LactoseMeal ,
+                             cintioni:Meal ,
+                             cintioni:NoGlutenMeal ,
+                             cintioni:VegMeal ;
+                    cintioni:hasIngredients cintioni:Eggplant ,
+                                            cintioni:Mozzarella ,
+                                            cintioni:Oil ,
+                                            cintioni:Onion ,
+                                            cintioni:Parmeasan ,
+                                            cintioni:Salt ,
+                                            cintioni:TomatoSauce ;
+                    cintioni:MealHasGluten "false"^^xsd:boolean ;
+                    cintioni:MealHasLactose "true"^^xsd:boolean ;
+                    cintioni:MealIsVegetarian "true"^^xsd:boolean ;
+                    cintioni:hasCalories "High" ;
+                    cintioni:hasName "Parmigiana" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Pasta
+cintioni:Pasta rdf:type owl:NamedIndividual ,
+                        cintioni:GlutenIngredient ,
+                        cintioni:Ingredient ,
+                        cintioni:NoLactoseIngredient ,
+                        cintioni:VegIngredient ;
+               cintioni:isInMeal cintioni:Carbonara ,
+                                 cintioni:PastaSalmonePomodoro ,
+                                 cintioni:PastaVongole ;
+               cintioni:hasGluten "true"^^xsd:boolean ;
+               cintioni:hasLactose "false"^^xsd:boolean ;
+               cintioni:hasName "Pasta" ;
+               cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#PastaSalmonePomodoro
+cintioni:PastaSalmonePomodoro rdf:type owl:NamedIndividual ,
+                                       cintioni:GlutenMeal ,
+                                       cintioni:LowCaloriesMeal ,
+                                       cintioni:Meal ,
+                                       cintioni:NoLactoseMeal ,
+                                       cintioni:VegMeal ;
+                              cintioni:hasIngredients cintioni:Oil ,
+                                                      cintioni:Pasta ,
+                                                      cintioni:Salmon ,
+                                                      cintioni:Salt ,
+                                                      cintioni:TomatoSauce ;
+                              cintioni:MealHasGluten "true"^^xsd:boolean ;
+                              cintioni:MealHasLactose "false"^^xsd:boolean ;
+                              cintioni:MealIsVegetarian "true"^^xsd:boolean ;
+                              cintioni:hasCalories "Low" ;
+                              cintioni:hasName "Pasta salmone e pomodoro" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#PastaVongole
+cintioni:PastaVongole rdf:type owl:NamedIndividual ,
+                               cintioni:GlutenMeal ,
+                               cintioni:LowCaloriesMeal ,
+                               cintioni:Meal ,
+                               cintioni:NoLactoseMeal ,
+                               cintioni:VegMeal ;
+                      cintioni:hasIngredients cintioni:Clams ,
+                                              cintioni:Oil ,
+                                              cintioni:Pasta ,
+                                              cintioni:Salt ;
+                      cintioni:MealHasGluten "true"^^xsd:boolean ;
+                      cintioni:MealHasLactose "false"^^xsd:boolean ;
+                      cintioni:MealIsVegetarian "true"^^xsd:boolean ;
+                      cintioni:hasCalories "Low" ;
+                      cintioni:hasName "Pasta alle vongole" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#PatateForno
+cintioni:PatateForno rdf:type owl:NamedIndividual ,
+                              cintioni:Meal ,
+                              cintioni:MediumCaloriesMeal ,
+                              cintioni:NoGlutenMeal ,
+                              cintioni:NoLactoseMeal ,
+                              cintioni:VegMeal ;
+                     cintioni:hasIngredients cintioni:Oil ,
+                                             cintioni:Potato ,
+                                             cintioni:Rosemary ,
+                                             cintioni:Salt ;
+                     cintioni:MealHasGluten "false"^^xsd:boolean ;
+                     cintioni:MealHasLactose "false"^^xsd:boolean ;
+                     cintioni:MealIsVegetarian "true"^^xsd:boolean ;
+                     cintioni:hasCalories "Medium" ;
+                     cintioni:hasName "Patate al forno" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#PatatineFritte
+cintioni:PatatineFritte rdf:type owl:NamedIndividual ,
+                                 cintioni:HighCaloriesMeal ,
+                                 cintioni:Meal ,
+                                 cintioni:NoGlutenMeal ,
+                                 cintioni:NoLactoseMeal ,
+                                 cintioni:VegMeal ;
+                        cintioni:hasIngredients cintioni:Ketchup ,
+                                                cintioni:Mayonnaise ,
+                                                cintioni:Oil ,
+                                                cintioni:Potato ,
+                                                cintioni:Salt ;
+                        cintioni:MealHasGluten "false"^^xsd:boolean ;
+                        cintioni:MealHasLactose "false"^^xsd:boolean ;
+                        cintioni:MealIsVegetarian "true"^^xsd:boolean ;
+                        cintioni:hasCalories "High" ;
+                        cintioni:hasName "Patatine fritte" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Peach
+cintioni:Peach rdf:type owl:NamedIndividual ,
+                        cintioni:Ingredient ,
+                        cintioni:NoGlutenIngredient ,
+                        cintioni:NoLactoseIngredient ,
+                        cintioni:VegIngredient ;
+               cintioni:isInMeal cintioni:Macedonia ;
+               cintioni:hasGluten "false"^^xsd:boolean ;
+               cintioni:hasLactose "false"^^xsd:boolean ;
+               cintioni:hasName "Peach" ;
+               cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Peas
+cintioni:Peas rdf:type owl:NamedIndividual ,
+                       cintioni:Ingredient ,
+                       cintioni:NoGlutenIngredient ,
+                       cintioni:NoLactoseIngredient ,
+                       cintioni:VegIngredient ;
+              cintioni:isInMeal cintioni:InsalataRussa ;
+              cintioni:hasGluten "false"^^xsd:boolean ;
+              cintioni:hasLactose "false"^^xsd:boolean ;
+              cintioni:hasName "Peas" ;
+              cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Pecorino
+cintioni:Pecorino rdf:type owl:NamedIndividual ,
+                           cintioni:Ingredient ,
+                           cintioni:LactoseIngredient ,
+                           cintioni:NoGlutenIngredient ,
+                           cintioni:VegIngredient ;
+                  cintioni:isInMeal cintioni:Carbonara ,
+                                    cintioni:RavioliRagu ,
+                                    cintioni:RavioliVegetariani ,
+                                    cintioni:Tagliere ;
+                  cintioni:hasGluten "false"^^xsd:boolean ;
+                  cintioni:hasLactose "true"^^xsd:boolean ;
+                  cintioni:hasName "Pecorino" ;
+                  cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#PizzaBoscaiola
+cintioni:PizzaBoscaiola rdf:type owl:NamedIndividual ,
+                                 cintioni:GlutenMeal ,
+                                 cintioni:HighCaloriesMeal ,
+                                 cintioni:LactoseMeal ,
+                                 cintioni:Meal ,
+                                 cintioni:NoVegMeal ;
+                        cintioni:hasIngredients cintioni:Champignon ,
+                                                cintioni:Flour ,
+                                                cintioni:Mozzarella ,
+                                                cintioni:Oil ,
+                                                cintioni:Salt ,
+                                                cintioni:Sausage ,
+                                                cintioni:Water ;
+                        cintioni:MealHasGluten "true"^^xsd:boolean ;
+                        cintioni:MealHasLactose "true"^^xsd:boolean ;
+                        cintioni:MealIsVegetarian "false"^^xsd:boolean ;
+                        cintioni:hasCalories "High" ;
+                        cintioni:hasName "Pizza boscaiola" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#PizzaMargherita
+cintioni:PizzaMargherita rdf:type owl:NamedIndividual ,
+                                  cintioni:GlutenMeal ,
+                                  cintioni:LactoseMeal ,
+                                  cintioni:Meal ,
+                                  cintioni:MediumCaloriesMeal ,
+                                  cintioni:VegMeal ;
+                         cintioni:hasIngredients cintioni:Flour ,
+                                                 cintioni:Mozzarella ,
+                                                 cintioni:Oil ,
+                                                 cintioni:Salt ,
+                                                 cintioni:TomatoSauce ,
+                                                 cintioni:Water ;
+                         cintioni:MealHasGluten "true"^^xsd:boolean ;
+                         cintioni:MealHasLactose "true"^^xsd:boolean ;
+                         cintioni:MealIsVegetarian "true"^^xsd:boolean ;
+                         cintioni:hasCalories "Medium" ;
+                         cintioni:hasName "Pizza margherita" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#PizzaMelanzaneProsciutto
+cintioni:PizzaMelanzaneProsciutto rdf:type owl:NamedIndividual ,
+                                           cintioni:GlutenMeal ,
+                                           cintioni:HighCaloriesMeal ,
+                                           cintioni:LactoseMeal ,
+                                           cintioni:Meal ,
+                                           cintioni:NoVegMeal ;
+                                  cintioni:hasIngredients cintioni:Eggplant ,
+                                                          cintioni:Flour ,
+                                                          cintioni:Ham ,
+                                                          cintioni:Mozzarella ,
+                                                          cintioni:Oil ,
+                                                          cintioni:Salt ,
+                                                          cintioni:TomatoSauce ,
+                                                          cintioni:Water ;
+                                  cintioni:MealHasGluten "true"^^xsd:boolean ;
+                                  cintioni:MealHasLactose "true"^^xsd:boolean ;
+                                  cintioni:MealIsVegetarian "false"^^xsd:boolean ;
+                                  cintioni:hasCalories "High" ;
+                                  cintioni:hasName "Pizza melanzane e prosciutto" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#PizzaNorcina
+cintioni:PizzaNorcina rdf:type owl:NamedIndividual ,
+                               cintioni:GlutenMeal ,
+                               cintioni:HighCaloriesMeal ,
+                               cintioni:LactoseMeal ,
+                               cintioni:Meal ,
+                               cintioni:NoVegMeal ;
+                      cintioni:hasIngredients cintioni:Champignon ,
+                                              cintioni:Egg ,
+                                              cintioni:Flour ,
+                                              cintioni:Mozzarella ,
+                                              cintioni:Oil ,
+                                              cintioni:Salt ,
+                                              cintioni:Sausage ,
+                                              cintioni:Truffle ;
+                      cintioni:MealHasGluten "true"^^xsd:boolean ;
+                      cintioni:MealHasLactose "true"^^xsd:boolean ;
+                      cintioni:MealIsVegetarian "false"^^xsd:boolean ;
+                      cintioni:hasCalories "High" ;
+                      cintioni:hasName "Pizza norcina" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#PizzaPatateBacon
+cintioni:PizzaPatateBacon rdf:type owl:NamedIndividual ,
+                                   cintioni:GlutenMeal ,
+                                   cintioni:HighCaloriesMeal ,
+                                   cintioni:LactoseMeal ,
+                                   cintioni:Meal ,
+                                   cintioni:NoVegMeal ;
+                          cintioni:hasIngredients cintioni:Bacon ,
+                                                  cintioni:Flour ,
+                                                  cintioni:Mozzarella ,
+                                                  cintioni:Oil ,
+                                                  cintioni:Potato ,
+                                                  cintioni:Salt ,
+                                                  cintioni:TomatoSauce ,
+                                                  cintioni:Water ;
+                          cintioni:MealHasGluten "true"^^xsd:boolean ;
+                          cintioni:MealHasLactose "true"^^xsd:boolean ;
+                          cintioni:MealIsVegetarian "false"^^xsd:boolean ;
+                          cintioni:hasCalories "High" ;
+                          cintioni:hasName "Pizza patate e bacon" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#PizzaProsciutto
+cintioni:PizzaProsciutto rdf:type owl:NamedIndividual ,
+                                  cintioni:GlutenMeal ,
+                                  cintioni:HighCaloriesMeal ,
+                                  cintioni:LactoseMeal ,
+                                  cintioni:Meal ,
+                                  cintioni:NoVegMeal ;
+                         cintioni:hasIngredients cintioni:Flour ,
+                                                 cintioni:Ham ,
+                                                 cintioni:Mozzarella ,
+                                                 cintioni:Oil ,
+                                                 cintioni:Salt ,
+                                                 cintioni:TomatoSauce ,
+                                                 cintioni:Water ;
+                         cintioni:MealHasGluten "true"^^xsd:boolean ;
+                         cintioni:MealHasLactose "true"^^xsd:boolean ;
+                         cintioni:MealIsVegetarian "false"^^xsd:boolean ;
+                         cintioni:hasCalories "High" ;
+                         cintioni:hasName "Pizza al prosciutto" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#PizzaSalmone
+cintioni:PizzaSalmone rdf:type owl:NamedIndividual ,
+                               cintioni:GlutenMeal ,
+                               cintioni:LactoseMeal ,
+                               cintioni:Meal ,
+                               cintioni:MediumCaloriesMeal ,
+                               cintioni:VegMeal ;
+                      cintioni:hasIngredients cintioni:Flour ,
+                                              cintioni:Mozzarella ,
+                                              cintioni:Oil ,
+                                              cintioni:Salmon ,
+                                              cintioni:Salt ,
+                                              cintioni:Water ;
+                      cintioni:MealHasGluten "true"^^xsd:boolean ;
+                      cintioni:MealHasLactose "true"^^xsd:boolean ;
+                      cintioni:MealIsVegetarian "true"^^xsd:boolean ;
+                      cintioni:hasCalories "Medium" ;
+                      cintioni:hasName "Pizza salmone" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#PizzaVegetariana
+cintioni:PizzaVegetariana rdf:type owl:NamedIndividual ,
+                                   cintioni:GlutenMeal ,
+                                   cintioni:LactoseMeal ,
+                                   cintioni:Meal ,
+                                   cintioni:MediumCaloriesMeal ,
+                                   cintioni:VegMeal ;
+                          cintioni:hasIngredients cintioni:Carrot ,
+                                                  cintioni:Champignon ,
+                                                  cintioni:Eggplant ,
+                                                  cintioni:Flour ,
+                                                  cintioni:Mozzarella ,
+                                                  cintioni:Oil ,
+                                                  cintioni:Onion ,
+                                                  cintioni:Salt ,
+                                                  cintioni:Tomato ,
+                                                  cintioni:Water ,
+                                                  cintioni:Zucchini ;
+                          cintioni:MealHasGluten "true"^^xsd:boolean ;
+                          cintioni:MealHasLactose "true"^^xsd:boolean ;
+                          cintioni:MealIsVegetarian "true"^^xsd:boolean ;
+                          cintioni:hasCalories "Medium" ;
+                          cintioni:hasName "Pizza vegetariana" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#PizzaZucchineSalsiccia
+cintioni:PizzaZucchineSalsiccia rdf:type owl:NamedIndividual ,
+                                         cintioni:GlutenMeal ,
+                                         cintioni:HighCaloriesMeal ,
+                                         cintioni:LactoseMeal ,
+                                         cintioni:Meal ,
+                                         cintioni:NoVegMeal ;
+                                cintioni:hasIngredients cintioni:Flour ,
+                                                        cintioni:Mozzarella ,
+                                                        cintioni:Oil ,
+                                                        cintioni:Salt ,
+                                                        cintioni:Sausage ,
+                                                        cintioni:Water ,
+                                                        cintioni:Zucchini ;
+                                cintioni:MealHasGluten "true"^^xsd:boolean ;
+                                cintioni:MealHasLactose "true"^^xsd:boolean ;
+                                cintioni:MealIsVegetarian "false"^^xsd:boolean ;
+                                cintioni:hasCalories "High" ;
+                                cintioni:hasName "Pizza zucchine e salsiccia" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Potato
+cintioni:Potato rdf:type owl:NamedIndividual ,
+                         cintioni:Ingredient ,
+                         cintioni:NoGlutenIngredient ,
+                         cintioni:NoLactoseIngredient ,
+                         cintioni:VegIngredient ;
+                cintioni:isInMeal cintioni:GnocchiSugoPapera ,
+                                  cintioni:InsalataRussa ,
+                                  cintioni:PatateForno ,
+                                  cintioni:PatatineFritte ,
+                                  cintioni:PizzaPatateBacon ;
+                cintioni:hasGluten "false"^^xsd:boolean ;
+                cintioni:hasLactose "false"^^xsd:boolean ;
+                cintioni:hasName "Potato" ;
+                cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#RavioliRagu
+cintioni:RavioliRagu rdf:type owl:NamedIndividual ,
+                              cintioni:GlutenMeal ,
+                              cintioni:HighCaloriesMeal ,
+                              cintioni:LactoseMeal ,
+                              cintioni:Meal ,
+                              cintioni:NoVegMeal ;
+                     cintioni:hasIngredients cintioni:Beef ,
+                                             cintioni:Egg ,
+                                             cintioni:Flour ,
+                                             cintioni:Oil ,
+                                             cintioni:Onion ,
+                                             cintioni:Pecorino ,
+                                             cintioni:Ricotta ,
+                                             cintioni:Salt ,
+                                             cintioni:TomatoSauce ;
+                     cintioni:MealHasGluten "true"^^xsd:boolean ;
+                     cintioni:MealHasLactose "true"^^xsd:boolean ;
+                     cintioni:MealIsVegetarian "false"^^xsd:boolean ;
+                     cintioni:hasCalories "High" ;
+                     cintioni:hasName "Ravioli al ragù" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#RavioliVegetariani
+cintioni:RavioliVegetariani rdf:type owl:NamedIndividual ,
+                                     cintioni:GlutenMeal ,
+                                     cintioni:LactoseMeal ,
+                                     cintioni:Meal ,
+                                     cintioni:MediumCaloriesMeal ,
+                                     cintioni:VegMeal ;
+                            cintioni:hasIngredients cintioni:Egg ,
+                                                    cintioni:Flour ,
+                                                    cintioni:Oil ,
+                                                    cintioni:Onion ,
+                                                    cintioni:Pecorino ,
+                                                    cintioni:Ricotta ,
+                                                    cintioni:Salt ,
+                                                    cintioni:TomatoSauce ;
+                            cintioni:MealHasGluten "true"^^xsd:boolean ;
+                            cintioni:MealHasLactose "true"^^xsd:boolean ;
+                            cintioni:MealIsVegetarian "true"^^xsd:boolean ;
+                            cintioni:hasCalories "Medium" ;
+                            cintioni:hasName "Ravioli vegetariani" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Rice
+cintioni:Rice rdf:type owl:NamedIndividual ,
+                       cintioni:Ingredient ,
+                       cintioni:NoGlutenIngredient ,
+                       cintioni:NoLactoseIngredient ,
+                       cintioni:VegIngredient ;
+              cintioni:isInMeal cintioni:AranciniAlProsciutto ,
+                                cintioni:AranciniAlRagu ,
+                                cintioni:AranciniVegetariani ,
+                                cintioni:RisottoSalsicciaFunghi ,
+                                cintioni:RisottoVongole ;
+              cintioni:hasGluten "false"^^xsd:boolean ;
+              cintioni:hasLactose "false"^^xsd:boolean ;
+              cintioni:hasName "Rice" ;
+              cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Ricotta
+cintioni:Ricotta rdf:type owl:NamedIndividual ,
+                          cintioni:Ingredient ,
+                          cintioni:LactoseIngredient ,
+                          cintioni:NoGlutenIngredient ,
+                          cintioni:VegIngredient ;
+                 cintioni:isInMeal cintioni:RavioliRagu ,
+                                   cintioni:RavioliVegetariani ,
+                                   cintioni:Tagliere ;
+                 cintioni:hasGluten "false"^^xsd:boolean ;
+                 cintioni:hasLactose "true"^^xsd:boolean ;
+                 cintioni:hasName "Ricotta" ;
+                 cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#RisottoSalsicciaFunghi
+cintioni:RisottoSalsicciaFunghi rdf:type owl:NamedIndividual ,
+                                         cintioni:Meal ,
+                                         cintioni:MediumCaloriesMeal ,
+                                         cintioni:NoGlutenMeal ,
+                                         cintioni:NoLactoseMeal ,
+                                         cintioni:NoVegMeal ;
+                                cintioni:hasIngredients cintioni:Champignon ,
+                                                        cintioni:Oil ,
+                                                        cintioni:Onion ,
+                                                        cintioni:Rice ,
+                                                        cintioni:Salt ,
+                                                        cintioni:Sausage ;
+                                cintioni:MealHasGluten "false"^^xsd:boolean ;
+                                cintioni:MealHasLactose "false"^^xsd:boolean ;
+                                cintioni:MealIsVegetarian "false"^^xsd:boolean ;
+                                cintioni:hasCalories "Medium" ;
+                                cintioni:hasName "Risotto salsiccia e funghi" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#RisottoVongole
+cintioni:RisottoVongole rdf:type owl:NamedIndividual ,
+                                 cintioni:LowCaloriesMeal ,
+                                 cintioni:Meal ,
+                                 cintioni:NoGlutenMeal ,
+                                 cintioni:NoLactoseMeal ,
+                                 cintioni:VegMeal ;
+                        cintioni:hasIngredients cintioni:Clams ,
+                                                cintioni:Oil ,
+                                                cintioni:Rice ,
+                                                cintioni:Salt ;
+                        cintioni:MealHasGluten "false"^^xsd:boolean ;
+                        cintioni:MealHasLactose "false"^^xsd:boolean ;
+                        cintioni:MealIsVegetarian "true"^^xsd:boolean ;
+                        cintioni:hasCalories "Low" ;
+                        cintioni:hasName "Risotto alle vongole" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Rosemary
+cintioni:Rosemary rdf:type owl:NamedIndividual ,
+                           cintioni:Ingredient ,
+                           cintioni:NoGlutenIngredient ,
+                           cintioni:NoLactoseIngredient ,
+                           cintioni:VegIngredient ;
+                  cintioni:isInMeal cintioni:ArrostoCarne ,
+                                    cintioni:ArrostoPesce ,
+                                    cintioni:GrigliataCarne ,
+                                    cintioni:GrigliataPesce ,
+                                    cintioni:PatateForno ,
+                                    cintioni:ScaloppineFunghi ,
+                                    cintioni:VerdureGrigliate ;
+                  cintioni:hasGluten "false"^^xsd:boolean ;
+                  cintioni:hasLactose "false"^^xsd:boolean ;
+                  cintioni:hasName "Rosemary" ;
+                  cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Salmon
+cintioni:Salmon rdf:type owl:NamedIndividual ,
+                         cintioni:Ingredient ,
+                         cintioni:NoGlutenIngredient ,
+                         cintioni:NoLactoseIngredient ,
+                         cintioni:VegIngredient ;
+                cintioni:isInMeal cintioni:ArrostoPesce ,
+                                  cintioni:GrigliataPesce ,
+                                  cintioni:PastaSalmonePomodoro ,
+                                  cintioni:PizzaSalmone ,
+                                  cintioni:Tartare ;
+                cintioni:hasGluten "false"^^xsd:boolean ;
+                cintioni:hasLactose "false"^^xsd:boolean ;
+                cintioni:hasName "Salmon" ;
+                cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Salt
+cintioni:Salt rdf:type owl:NamedIndividual ,
+                       cintioni:Ingredient ,
+                       cintioni:NoGlutenIngredient ,
+                       cintioni:NoLactoseIngredient ,
+                       cintioni:VegIngredient ;
+              cintioni:isInMeal cintioni:AranciniAlProsciutto ,
+                                cintioni:AranciniAlRagu ,
+                                cintioni:AranciniVegetariani ,
+                                cintioni:ArrostoCarne ,
+                                cintioni:ArrostoPesce ,
+                                cintioni:GnocchiSugoPapera ,
+                                cintioni:GrigliataCarne ,
+                                cintioni:GrigliataPesce ,
+                                cintioni:Insalata ,
+                                cintioni:InsalataRussa ,
+                                cintioni:MelanzaneRipiene ,
+                                cintioni:Parmigiana ,
+                                cintioni:PastaSalmonePomodoro ,
+                                cintioni:PastaVongole ,
+                                cintioni:PatateForno ,
+                                cintioni:PatatineFritte ,
+                                cintioni:PizzaBoscaiola ,
+                                cintioni:PizzaMargherita ,
+                                cintioni:PizzaMelanzaneProsciutto ,
+                                cintioni:PizzaNorcina ,
+                                cintioni:PizzaPatateBacon ,
+                                cintioni:PizzaProsciutto ,
+                                cintioni:PizzaSalmone ,
+                                cintioni:PizzaVegetariana ,
+                                cintioni:PizzaZucchineSalsiccia ,
+                                cintioni:RavioliRagu ,
+                                cintioni:RavioliVegetariani ,
+                                cintioni:RisottoSalsicciaFunghi ,
+                                cintioni:RisottoVongole ,
+                                cintioni:ScaloppineFunghi ,
+                                cintioni:Tartare ,
+                                cintioni:VerdureGrigliate ;
+              cintioni:hasGluten "false"^^xsd:boolean ;
+              cintioni:hasLactose "false"^^xsd:boolean ;
+              cintioni:hasName "Salt" ;
+              cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Sausage
+cintioni:Sausage rdf:type owl:NamedIndividual ,
+                          cintioni:Ingredient ,
+                          cintioni:NoGlutenIngredient ,
+                          cintioni:NoLactoseIngredient ,
+                          cintioni:NoVegIngredient ;
+                 cintioni:isInMeal cintioni:ArrostoCarne ,
+                                   cintioni:GrigliataCarne ,
+                                   cintioni:PizzaBoscaiola ,
+                                   cintioni:PizzaNorcina ,
+                                   cintioni:PizzaZucchineSalsiccia ,
+                                   cintioni:RisottoSalsicciaFunghi ;
+                 cintioni:hasGluten "false"^^xsd:boolean ;
+                 cintioni:hasLactose "false"^^xsd:boolean ;
+                 cintioni:hasName "Sausage" ;
+                 cintioni:isVegetarian "false"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#ScaloppineFunghi
+cintioni:ScaloppineFunghi rdf:type owl:NamedIndividual ,
+                                   cintioni:GlutenMeal ,
+                                   cintioni:LowCaloriesMeal ,
+                                   cintioni:Meal ,
+                                   cintioni:NoLactoseMeal ,
+                                   cintioni:NoVegMeal ;
+                          cintioni:hasIngredients cintioni:Beef ,
+                                                  cintioni:Champignon ,
+                                                  cintioni:Flour ,
+                                                  cintioni:Oil ,
+                                                  cintioni:Rosemary ,
+                                                  cintioni:Salt ;
+                          cintioni:MealHasGluten "true"^^xsd:boolean ;
+                          cintioni:MealHasLactose "false"^^xsd:boolean ;
+                          cintioni:MealIsVegetarian "false"^^xsd:boolean ;
+                          cintioni:hasCalories "Low" ;
+                          cintioni:hasName "Scaloppine ai funghi" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Seabass
+cintioni:Seabass rdf:type owl:NamedIndividual ,
+                          cintioni:Ingredient ,
+                          cintioni:NoGlutenIngredient ,
+                          cintioni:NoLactoseIngredient ,
+                          cintioni:VegIngredient ;
+                 cintioni:isInMeal cintioni:ArrostoPesce ,
+                                   cintioni:GrigliataPesce ;
+                 cintioni:hasGluten "false"^^xsd:boolean ;
+                 cintioni:hasLactose "false"^^xsd:boolean ;
+                 cintioni:hasName "Seabass" ;
+                 cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#SparklingWater
+cintioni:SparklingWater rdf:type owl:NamedIndividual ,
+                                 cintioni:Ingredient ,
+                                 cintioni:NoGlutenIngredient ,
+                                 cintioni:NoLactoseIngredient ,
+                                 cintioni:VegIngredient ;
+                        cintioni:hasGluten "false"^^xsd:boolean ;
+                        cintioni:hasLactose "false"^^xsd:boolean ;
+                        cintioni:hasName "Sparkling water" ;
+                        cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Strawberry
+cintioni:Strawberry rdf:type owl:NamedIndividual ,
+                             cintioni:Ingredient ,
+                             cintioni:NoGlutenIngredient ,
+                             cintioni:NoLactoseIngredient ,
+                             cintioni:VegIngredient ;
+                    cintioni:isInMeal cintioni:Macedonia ;
+                    cintioni:hasGluten "false"^^xsd:boolean ;
+                    cintioni:hasLactose "false"^^xsd:boolean ;
+                    cintioni:hasName "Strawberry" ;
+                    cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Sugar
+cintioni:Sugar rdf:type owl:NamedIndividual ,
+                        cintioni:Ingredient ,
+                        cintioni:NoGlutenIngredient ,
+                        cintioni:NoLactoseIngredient ,
+                        cintioni:VegIngredient ;
+               cintioni:isInMeal cintioni:Macedonia ;
+               cintioni:hasGluten "false"^^xsd:boolean ;
+               cintioni:hasLactose "false"^^xsd:boolean ;
+               cintioni:hasName "Sugar" ;
+               cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Tagliere
+cintioni:Tagliere rdf:type owl:NamedIndividual ,
+                           cintioni:HighCaloriesMeal ,
+                           cintioni:LactoseMeal ,
+                           cintioni:Meal ,
+                           cintioni:NoGlutenMeal ,
+                           cintioni:NoVegMeal ;
+                  cintioni:hasIngredients cintioni:Ham ,
+                                          cintioni:Mozzarella ,
+                                          cintioni:Parmeasan ,
+                                          cintioni:Pecorino ,
+                                          cintioni:Ricotta ;
+                  cintioni:MealHasGluten "false"^^xsd:boolean ;
+                  cintioni:MealHasLactose "true"^^xsd:boolean ;
+                  cintioni:MealIsVegetarian "false"^^xsd:boolean ;
+                  cintioni:hasCalories "High" ;
+                  cintioni:hasName "Tagliere" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Tartare
+cintioni:Tartare rdf:type owl:NamedIndividual ,
+                          cintioni:HighCaloriesMeal ,
+                          cintioni:Meal ,
+                          cintioni:NoGlutenMeal ,
+                          cintioni:NoLactoseMeal ,
+                          cintioni:VegMeal ;
+                 cintioni:hasIngredients cintioni:Avocado ,
+                                         cintioni:Lemon ,
+                                         cintioni:Salmon ,
+                                         cintioni:Salt ,
+                                         cintioni:Tomato ;
+                 cintioni:MealHasGluten "false"^^xsd:boolean ;
+                 cintioni:MealHasLactose "false"^^xsd:boolean ;
+                 cintioni:MealIsVegetarian "true"^^xsd:boolean ;
+                 cintioni:hasCalories "High" ;
+                 cintioni:hasName "Tartare" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Tiramisu
+cintioni:Tiramisu rdf:type owl:NamedIndividual ,
+                           cintioni:GlutenMeal ,
+                           cintioni:HighCaloriesMeal ,
+                           cintioni:LactoseMeal ,
+                           cintioni:Meal ,
+                           cintioni:VegMeal ;
+                  cintioni:hasIngredients cintioni:Coffee ,
+                                          cintioni:Ladyfinger ,
+                                          cintioni:Mascarpone ;
+                  cintioni:MealHasGluten "true"^^xsd:boolean ;
+                  cintioni:MealHasLactose "true"^^xsd:boolean ;
+                  cintioni:MealIsVegetarian "true"^^xsd:boolean ;
+                  cintioni:hasCalories "High" ;
+                  cintioni:hasName "Tiramisù" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Tomato
+cintioni:Tomato rdf:type owl:NamedIndividual ,
+                         cintioni:Ingredient ,
+                         cintioni:NoGlutenIngredient ,
+                         cintioni:NoLactoseIngredient ,
+                         cintioni:VegIngredient ;
+                cintioni:isInMeal cintioni:Insalata ,
+                                  cintioni:PizzaVegetariana ,
+                                  cintioni:Tartare ,
+                                  cintioni:VerdureGrigliate ;
+                cintioni:hasGluten "false"^^xsd:boolean ;
+                cintioni:hasLactose "false"^^xsd:boolean ;
+                cintioni:hasName "Tomato" ;
+                cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#TomatoSauce
+cintioni:TomatoSauce rdf:type owl:NamedIndividual ,
+                              cintioni:Ingredient ,
+                              cintioni:NoGlutenIngredient ,
+                              cintioni:NoLactoseIngredient ,
+                              cintioni:VegIngredient ;
+                     cintioni:isInMeal cintioni:AranciniAlRagu ,
+                                       cintioni:AranciniVegetariani ,
+                                       cintioni:GnocchiSugoPapera ,
+                                       cintioni:MelanzaneRipiene ,
+                                       cintioni:Parmigiana ,
+                                       cintioni:PastaSalmonePomodoro ,
+                                       cintioni:PizzaMargherita ,
+                                       cintioni:PizzaMelanzaneProsciutto ,
+                                       cintioni:PizzaPatateBacon ,
+                                       cintioni:PizzaProsciutto ,
+                                       cintioni:RavioliRagu ,
+                                       cintioni:RavioliVegetariani ;
+                     cintioni:hasGluten "false"^^xsd:boolean ;
+                     cintioni:hasLactose "false"^^xsd:boolean ;
+                     cintioni:hasName "Tomato sauce" ;
+                     cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Truffle
+cintioni:Truffle rdf:type owl:NamedIndividual ,
+                          cintioni:Ingredient ,
+                          cintioni:NoGlutenIngredient ,
+                          cintioni:NoLactoseIngredient ,
+                          cintioni:VegIngredient ;
+                 cintioni:isInMeal cintioni:PizzaNorcina ;
+                 cintioni:hasGluten "false"^^xsd:boolean ;
+                 cintioni:hasLactose "false"^^xsd:boolean ;
+                 cintioni:hasName "Truffle" ;
+                 cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#VerdureGrigliate
+cintioni:VerdureGrigliate rdf:type owl:NamedIndividual ,
+                                   cintioni:LowCaloriesMeal ,
+                                   cintioni:Meal ,
+                                   cintioni:NoGlutenMeal ,
+                                   cintioni:NoLactoseMeal ,
+                                   cintioni:VegMeal ;
+                          cintioni:hasIngredients cintioni:Eggplant ,
+                                                  cintioni:Oil ,
+                                                  cintioni:Rosemary ,
+                                                  cintioni:Salt ,
+                                                  cintioni:Tomato ,
+                                                  cintioni:Zucchini ;
+                          cintioni:MealHasGluten "false"^^xsd:boolean ;
+                          cintioni:MealHasLactose "false"^^xsd:boolean ;
+                          cintioni:MealIsVegetarian "true"^^xsd:boolean ;
+                          cintioni:hasCalories "Low" ;
+                          cintioni:hasName "Verdure grigliate" .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Water
+cintioni:Water rdf:type owl:NamedIndividual ,
+                        cintioni:Ingredient ,
+                        cintioni:NoGlutenIngredient ,
+                        cintioni:NoLactoseIngredient ,
+                        cintioni:VegIngredient ;
+               cintioni:isInMeal cintioni:AranciniAlProsciutto ,
+                                 cintioni:AranciniAlRagu ,
+                                 cintioni:AranciniVegetariani ,
+                                 cintioni:PizzaBoscaiola ,
+                                 cintioni:PizzaMargherita ,
+                                 cintioni:PizzaMelanzaneProsciutto ,
+                                 cintioni:PizzaPatateBacon ,
+                                 cintioni:PizzaProsciutto ,
+                                 cintioni:PizzaSalmone ,
+                                 cintioni:PizzaVegetariana ,
+                                 cintioni:PizzaZucchineSalsiccia ;
+               cintioni:hasGluten "false"^^xsd:boolean ;
+               cintioni:hasLactose "false"^^xsd:boolean ;
+               cintioni:hasName "Water" ;
+               cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Zucchini
+cintioni:Zucchini rdf:type owl:NamedIndividual ,
+                           cintioni:Ingredient ,
+                           cintioni:NoGlutenIngredient ,
+                           cintioni:NoLactoseIngredient ,
+                           cintioni:VegIngredient ;
+                  cintioni:isInMeal cintioni:PizzaVegetariana ,
+                                    cintioni:PizzaZucchineSalsiccia ,
+                                    cintioni:VerdureGrigliate ;
+                  cintioni:hasGluten "false"^^xsd:boolean ;
+                  cintioni:hasLactose "false"^^xsd:boolean ;
+                  cintioni:hasName "Zucchini" ;
+                  cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( cintioni:HighCaloriesMeal
+                cintioni:LowCaloriesMeal
+                cintioni:MediumCaloriesMeal
+              )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( cintioni:Apple
+                        cintioni:AranciniAlProsciutto
+                        cintioni:AranciniAlRagu
+                        cintioni:AranciniVegetariani
+                        cintioni:ArrostoCarne
+                        cintioni:ArrostoPesce
+                        cintioni:Avocado
+                        cintioni:Bacon
+                        cintioni:Beef
+                        cintioni:Bread
+                        cintioni:Carbonara
+                        cintioni:Carrot
+                        cintioni:Champignon
+                        cintioni:Clams
+                        cintioni:Coffee
+                        cintioni:Duck
+                        cintioni:Egg
+                        cintioni:Eggplant
+                        cintioni:Flour
+                        cintioni:GnocchiSugoPapera
+                        cintioni:GrigliataCarne
+                        cintioni:GrigliataPesce
+                        cintioni:Ham
+                        cintioni:Insalata
+                        cintioni:InsalataRussa
+                        cintioni:Ketchup
+                        cintioni:Ladyfinger
+                        cintioni:Lemon
+                        cintioni:Lettuce
+                        cintioni:Macedonia
+                        cintioni:Mascarpone
+                        cintioni:Mayonnaise
+                        cintioni:MelanzaneRipiene
+                        cintioni:Mozzarella
+                        cintioni:Oil
+                        cintioni:Onion
+                        cintioni:Parmeasan
+                        cintioni:Parmigiana
+                        cintioni:Pasta
+                        cintioni:PastaSalmonePomodoro
+                        cintioni:PastaVongole
+                        cintioni:PatateForno
+                        cintioni:PatatineFritte
+                        cintioni:Peach
+                        cintioni:Peas
+                        cintioni:Pecorino
+                        cintioni:PizzaBoscaiola
+                        cintioni:PizzaMargherita
+                        cintioni:PizzaMelanzaneProsciutto
+                        cintioni:PizzaNorcina
+                        cintioni:PizzaPatateBacon
+                        cintioni:PizzaProsciutto
+                        cintioni:PizzaSalmone
+                        cintioni:PizzaVegetariana
+                        cintioni:PizzaZucchineSalsiccia
+                        cintioni:Potato
+                        cintioni:RavioliRagu
+                        cintioni:RavioliVegetariani
+                        cintioni:Rice
+                        cintioni:Ricotta
+                        cintioni:RisottoSalsicciaFunghi
+                        cintioni:RisottoVongole
+                        cintioni:Rosemary
+                        cintioni:Salmon
+                        cintioni:Salt
+                        cintioni:Sausage
+                        cintioni:ScaloppineFunghi
+                        cintioni:Seabass
+                        cintioni:SparklingWater
+                        cintioni:Strawberry
+                        cintioni:Sugar
+                        cintioni:Tagliere
+                        cintioni:Tartare
+                        cintioni:Tiramisu
+                        cintioni:Tomato
+                        cintioni:TomatoSauce
+                        cintioni:Truffle
+                        cintioni:VerdureGrigliate
+                        cintioni:Water
+                        cintioni:Zucchini
+                      )
+] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+:x rdf:type swrl:Variable .
+
+:y rdf:type swrl:Variable .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for ingredients with gluten" ;
+   rdfs:label "Gluten ingredients rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Ingredient ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate cintioni:hasGluten ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 "true"^^xsd:boolean
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:GlutenIngredient ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for Ingredients lactose-free" ;
+   rdfs:label "Lactose-free Ingredients rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Ingredient ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate cintioni:hasLactose ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 "false"^^xsd:boolean
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:NoLactoseIngredient ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for Ingredients with lactose" ;
+   rdfs:label "Lactose ingredients rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Ingredient ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate cintioni:hasLactose ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 "true"^^xsd:boolean
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:LactoseIngredient ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for non Vegetarian Ingredients" ;
+   rdfs:label "Non vegetarian Ingredient rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Ingredient ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate cintioni:isVegetarian ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 "false"^^xsd:boolean
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:NoVegIngredient ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for Vegetarian Ingredients" ;
+   rdfs:label "Vegetarian Ingredient rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Ingredient ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate cintioni:isVegetarian ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 "true"^^xsd:boolean
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:VegIngredient ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule to get meals with lactose" ;
+   rdfs:label "Lactose meals rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:LactoseIngredient ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate cintioni:isInMeal ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 :y
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:LactoseMeal ;
+                           swrl:argument1 :y
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule to get meals gluten-free" ;
+   rdfs:label "Gluten-free meals rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Meal ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate cintioni:MealHasGluten ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 "false"^^xsd:boolean
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:NoGlutenMeal ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule to get meals lactose-free" ;
+   rdfs:label "Lactose-free meals rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Meal ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate cintioni:MealHasLactose ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 "false"^^xsd:boolean
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:NoLactoseMeal ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule to get vegetarian meals" ;
+   rdfs:label "Vegetarian meals rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Meal ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate cintioni:MealIsVegetarian ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 "true"^^xsd:boolean
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:VegMeal ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for high calories meals" ;
+   rdfs:label "High calories meals rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Meal ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate cintioni:hasCalories ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 "High"
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:HighCaloriesMeal ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for low calories meals" ;
+   rdfs:label "Low calories meals rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Meal ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate cintioni:hasCalories ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 "Low"
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:LowCaloriesMeal ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for medium calories meals" ;
+   rdfs:label "Medium calories meals rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Meal ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate cintioni:hasCalories ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 "Medium"
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:MediumCaloriesMeal ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule to get non vegetarian meals" ;
+   rdfs:label "Non vegetarian meals rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:NoVegIngredient ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate cintioni:isInMeal ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 :y
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:NoVegMeal ;
+                           swrl:argument1 :y
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Reverse rule of hasIngredient" ;
+   rdfs:label "Reverse of hasIngredient rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasIngredients ;
+                           swrl:argument1 :x ;
+                           swrl:argument2 :y
+                         ] ;
+               rdf:rest rdf:nil
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:isInMeal ;
+                           swrl:argument1 :y ;
+                           swrl:argument2 :x
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule to get meals with gluten" ;
+   rdfs:label "Gluten meals rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:GlutenIngredient ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate cintioni:isInMeal ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 :y
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:GlutenMeal ;
+                           swrl:argument1 :y
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for gluten-free Ingredients" ;
+   rdfs:label "Gluten-free ingredients rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Ingredient ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate cintioni:hasGluten ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 "false"^^xsd:boolean
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:NoGlutenIngredient ;
+                           swrl:argument1 :x
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
