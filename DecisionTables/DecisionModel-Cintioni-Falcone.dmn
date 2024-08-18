@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0xjws6s" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.25.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.4.0">
+  <decision id="Decision_1ukpzfk" name="Gluten_Ingredients">
+    <informationRequirement id="InformationRequirement_0lltoy8">
+      <requiredInput href="#InputData_1hc07es" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1qh5hs2" hitPolicy="COLLECT">
+      <input id="InputClause_0vo6b0v" label="Gluten_Intolerance" biodi:width="192" camunda:inputVariable="Gluten_Intolerance">
+        <inputExpression id="LiteralExpression_1ykt9nx" typeRef="boolean">
+          <text>Gluten_Intolerance</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_185e1fx" label="Gluten_Ingredients" name="Gluten_Ingredients" typeRef="string" biodi:width="255" />
+      <rule id="DecisionRule_0akbxsx">
+        <inputEntry id="UnaryTests_12307jq">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05vgz5w">
+          <text>"Flour"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07b7jrm">
+        <inputEntry id="UnaryTests_1czwx29">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1juawly">
+          <text>"Ladyfingers"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1glk0yw">
+        <inputEntry id="UnaryTests_0gcxn4v">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1batkz6">
+          <text>"Bread"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ambi6s">
+        <inputEntry id="UnaryTests_0kvj783">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ea830g">
+          <text>"Pasta"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0aenqwq">
+        <inputEntry id="UnaryTests_07tvs7e">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05ikq7b">
+          <text>""</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_1hc07es" name="Gluten_Intolerance" />
+  <decision id="Decision_0zu3fo4" name="Ingredients">
+    <variable id="InformationItem_0t9dm6y" name="Ingredients" typeRef="list" />
+    <authorityRequirement id="AuthorityRequirement_1rx21qm">
+      <requiredAuthority href="#KnowledgeSource_1aei2kw" />
+    </authorityRequirement>
+    <literalExpression id="LiteralExpression_1368id1">
+      <text>[
+  "Salmon",
+  "Avocado",
+  "Lemon",
+  "Salt",
+  "Rice",
+  "Tomato",
+  "Mozzarella",
+  "Parmaesan",
+  "Ham",
+  "Flour",
+  "Mayonnaise",
+  "Carrot",
+  "Potato",
+  "Peas",
+  "Clams",
+  "Duck",
+  "Beef",
+  "Sausage",
+  "Truffle",
+  "Champignon",
+  "Eggplant",
+  "Seabass",
+  "Lettuce",
+  "Mascarpone",
+  "Ladyfinger",
+  "Coffee",
+  "Apple",
+  "Peach",
+  "Strawberry",
+  "Oil",
+  "Sugar",
+  "Rosemary",
+  "Onion",
+  "Pecorino",
+  "Water",
+  "Sparkling water",
+  "Ricotta",
+  "Tomato sauce",
+  "Egg",
+  "Pasta",
+  "Bread",
+  "Bacon",
+  "Ketchup",
+  "Zucchini"
+]</text>
+    </literalExpression>
+  </decision>
+  <inputData id="InputData_07i22ag" name="Lactose_Intolerance" />
+  <decision id="Decision_1f60uz7" name="Lactose_Ingredients">
+    <informationRequirement id="InformationRequirement_1q36hw5">
+      <requiredInput href="#InputData_07i22ag" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1mqhubd" hitPolicy="COLLECT">
+      <input id="InputClause_12uocbi" label="Lactose_Intolerance" biodi:width="192" camunda:inputVariable="Lactose_Intolerance">
+        <inputExpression id="LiteralExpression_0cl8lmt" typeRef="boolean">
+          <text>Lactose_Intolerance</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_1dszu10" label="Lactose_Ingredients" name="Lactose_Ingredients" typeRef="string" />
+      <rule id="DecisionRule_1g3mog9">
+        <inputEntry id="UnaryTests_1ddfems">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0g6eo3g">
+          <text>"Mozzarella"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1kzi0pr">
+        <inputEntry id="UnaryTests_01qkb88">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fdymgh">
+          <text>"Ricotta"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0icz4p1">
+        <inputEntry id="UnaryTests_02vybcq">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00yva2x">
+          <text>"Parmaesan"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1x508zp">
+        <inputEntry id="UnaryTests_08ha46t">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_123dswh">
+          <text>"Pecorino"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12q7j0q">
+        <inputEntry id="UnaryTests_1qyrbor">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0y5znfp">
+          <text>"Mascarpone"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07yx6ar">
+        <inputEntry id="UnaryTests_1uzbz40">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1u2xj29">
+          <text>""</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <knowledgeSource id="KnowledgeSource_1aei2kw" name="Ingredients" />
+  <inputData id="InputData_0jq8tkq" name="Vegetarian" />
+  <decision id="Decision_1mxmnck" name="Vegetarian_Ingredients">
+    <informationRequirement id="InformationRequirement_1qlclog">
+      <requiredInput href="#InputData_0jq8tkq" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_08so834" hitPolicy="COLLECT">
+      <input id="InputClause_1g354er" label="Vegetarian" biodi:width="192" camunda:inputVariable="Vegetarian">
+        <inputExpression id="LiteralExpression_1tvpq4a" typeRef="boolean">
+          <text>Vegetarian</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_1bzejeq" label="Vegetarian_Ingredients" name="Vegetarian_Ingredients" typeRef="string" biodi:width="321" />
+      <rule id="DecisionRule_0glajbt">
+        <inputEntry id="UnaryTests_0pd0yle">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03t6ntc">
+          <text>"Ham"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0gy8dtm">
+        <inputEntry id="UnaryTests_00n8p1r">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1y0dd24">
+          <text>"Duck"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ogq43c">
+        <inputEntry id="UnaryTests_1kdh2pj">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04er48y">
+          <text>"Beef"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1kvfzfx">
+        <inputEntry id="UnaryTests_1ufaumm">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1cfcxif">
+          <text>"Sausage"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0jxj1dw">
+        <inputEntry id="UnaryTests_1p07t33">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qnry6h">
+          <text>"Bacon"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12vlo36">
+        <inputEntry id="UnaryTests_0hms527">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0x21303">
+          <text>""</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_1k5gdor" name="Allergies_Ingredients">
+    <informationRequirement id="InformationRequirement_0beuv9u">
+      <requiredDecision href="#Decision_1f60uz7" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1n5rdj1">
+      <requiredDecision href="#Decision_1ukpzfk" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_021xuf2" hitPolicy="FIRST">
+      <input id="InputClause_18n61ey" label="Gluten_Ingredients" biodi:width="264" camunda:inputVariable="Gluten_Ingredients">
+        <inputExpression id="LiteralExpression_15p1bow" typeRef="list">
+          <text>Gluten_Ingredients</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_02kothe" label="Lactose_Ingredients" biodi:width="287" camunda:inputVariable="Lactose_Ingredients">
+        <inputExpression id="LiteralExpression_043dl2h" typeRef="list">
+          <text>Lactose_Ingredients</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_1c5udck" label="Allergies_Ingredients" name="Allergies_Ingredients" typeRef="list" biodi:width="801" />
+      <rule id="DecisionRule_0x0bhop">
+        <description>no intolerances (non ritrono alcun ingrediente)</description>
+        <inputEntry id="UnaryTests_1nitqbo">
+          <text>count(Gluten_Ingredients) = 1 and Gluten_Ingredients[1] = ""</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iftijz">
+          <text>count(Lactose_Ingredients) = 1 and Lactose_Ingredients[1] = ""</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_129lcze">
+          <text>[""]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0quvlgd">
+        <description>lactose intolerance (ritorno gli ingredienti con lattosio)</description>
+        <inputEntry id="UnaryTests_15mxztc">
+          <text>count(Gluten_Ingredients) = 1 and Gluten_Ingredients[1] = ""</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b2fikx">
+          <text>count(Lactose_Ingredients) != 1</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1s9yau0">
+          <text>Lactose_Ingredients</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1abft0q">
+        <description>gluten intolerance (ritorno gli ingredienti con glutine)</description>
+        <inputEntry id="UnaryTests_1dwc688">
+          <text>count(Gluten_Ingredients) != 1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12rvni6">
+          <text>count(Lactose_Ingredients) = 1 and Lactose_Ingredients[1] = ""</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17xmhby">
+          <text>Gluten_Ingredients</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wy7xgj">
+        <description>all allergies (ritorno ingredienti con glutine e lattosio)</description>
+        <inputEntry id="UnaryTests_1va8nye">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ny2sl9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_004l6tv">
+          <text>concatenate(Lactose_Ingredients, Gluten_Ingredients)</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_0692ng8" name="Final_Ingredients">
+    <informationRequirement id="InformationRequirement_0ka0y3m">
+      <requiredDecision href="#Decision_1k5gdor" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1dj71wm">
+      <requiredDecision href="#Decision_1mxmnck" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1dolah8">
+      <requiredDecision href="#Decision_0zu3fo4" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0afhug8" hitPolicy="FIRST">
+      <input id="InputClause_1ua1fbt" label="Vegetarian_Ingredients" camunda:inputVariable="Vegetarian_Ingredients">
+        <inputExpression id="LiteralExpression_1uom8t6" typeRef="list">
+          <text>Vegetarian_Ingredients</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0baueg3" label="Allergies_Ingredients" biodi:width="192" camunda:inputVariable="Allergies_Ingredients">
+        <inputExpression id="LiteralExpression_01ec1ce" typeRef="list">
+          <text>Allergies_Ingredients</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0c5znu0" label="Final_Ingredients" name="Final_Ingredients" typeRef="list" />
+      <rule id="DecisionRule_0qo9b4d">
+        <description>no vegetarian, no allergies</description>
+        <inputEntry id="UnaryTests_1ek84t0">
+          <text>count(Vegetarian_Ingredients) = 1 and Vegetarian_Ingredients[1] = ""</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nz9tef">
+          <text>count(Allergies_Ingredients) = 1 and Allergies_Ingredients[1] = ""</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05duh4i">
+          <text>Ingredients[list contains(Ingredients, item)]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0r4nnsw">
+        <description>vegetarian, no allergies</description>
+        <inputEntry id="UnaryTests_0dghjbt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cjnwmt">
+          <text>count(Allergies_Ingredients) = 1 and Allergies_Ingredients[1] = ""</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_164b4wy">
+          <text>Ingredients[not (list contains(Vegetarian_Ingredients, item))]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0d5i837">
+        <description>no vegetarian, allergies</description>
+        <inputEntry id="UnaryTests_1hwlpam">
+          <text>count(Vegetarian_Ingredients) = 1 and Vegetarian_Ingredients[1] = ""</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xn0s7j">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lm4iy1">
+          <text>Ingredients[not (list contains(Allergies_Ingredients, item))]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1p1hwlw">
+        <description>vegetarian, allergies</description>
+        <inputEntry id="UnaryTests_192f45g">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1o7r3fo">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1icx1rt">
+          <text>Ingredients[not (list contains(Vegetarian_Ingredients, item))][not (list contains(Allergies_Ingredients, item))]</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_0j1o0xh" name="Meals">
+    <variable id="InformationItem_0ff0pg9" name="Meals" typeRef="context" />
+    <authorityRequirement id="AuthorityRequirement_0goigvv">
+      <requiredAuthority href="#KnowledgeSource_1aei2kw" />
+    </authorityRequirement>
+    <authorityRequirement id="AuthorityRequirement_1a3yz72">
+      <requiredAuthority href="#KnowledgeSource_1t451z3" />
+    </authorityRequirement>
+    <literalExpression id="LiteralExpression_1d02qd0">
+      <text>{
+  "Tartare":[
+    "Salmon",
+    "Salt",
+    "Avocado",
+    "Lemon",
+    "Tomato"    
+  ],
+  "Arancini al ragù":[
+    "Bread",
+    "Flour",
+    "Rice",
+    "Salt",
+    "Water",
+    "Mozzarella",
+    "Onion",
+    "Beef",
+    "Oil",
+    "Tomato sauce"
+  ],
+  "Arancini al prosciutto":[
+    "Bread",
+    "Flour",
+    "Rice",
+    "Salt",
+    "Water",
+    "Mozzarella",
+    "Ham"
+  ],
+  "Arancini vegetariani":[
+    "Bread",
+    "Flour",
+    "Rice",
+    "Salt",
+    "Water",
+    "Mozzarella",
+    "Onion",
+    "Oil",
+    "Tomato sauce"
+  ],
+  "Tagliere":[
+    "Ham",
+    "Mozzarella",
+    "Pecorino",
+    "Ricotta",
+    "Parmeasan"
+  ],
+  "Insalata russa":[
+    "Potato",
+    "Carrot",
+    "Peas",
+    "Egg",
+    "Oil",
+    "Salt",
+    "Mayonnaise"
+  ],
+  "Carbonara":[
+    "Egg",
+    "Bacon",
+    "Pasta",
+    "Pecorino"
+  ],
+  "Pasta salmone e pomodoro":[
+    "Pasta",
+    "Salmon",
+    "Tomato sauce",
+    "Salt",
+    "Oil"
+  ],
+  "Pasta alle vongole":[
+    "Pasta",
+    "Clams",
+    "Oil",
+    "Salt"
+  ],
+  "Risotto alle vongole":[
+    "Rice",
+    "Clams",
+    "Oil",
+    "Salt"
+  ],
+  "Gnocchi al sugo di papera":[
+    "Flour",
+    "Potato",
+    "Egg",
+    "Salt",
+    "Oil",
+    "Duck",
+    "Onion",
+    "Carrot",
+    "Tomato sauce",
+    "Parmeasan"
+  ],
+  "Risotto salsiccia e funghi":[
+    "Rice",
+    "Sausage",
+    "Champignon",
+    "Onion",
+    "Oil",
+    "Salt"
+  ],
+  "Ravioli al ragù":[
+    "Oil",
+    "Salt",
+    "Pecorino",
+    "Ricotta",
+    "Flour",
+    "Egg",
+    "Onion",
+    "Tomato sauce",
+    "Beef"    
+  ],
+  "Ravioli vegetariani":[
+    "Oil",
+    "Salt",
+    "Pecorino",
+    "Ricotta",
+    "Flour",
+    "Egg",
+    "Onion",
+    "Tomato sauce"        
+  ],
+  "Parmigiana":[
+    "Eggplant",
+    "Tomato sauce",
+    "Mozzarella",
+    "Parmeasan",
+    "Onion",
+    "Oil",
+    "Salt"    
+  ],
+  "Arrosto di carne":[
+    "Beef",
+    "Sausage",
+    "Lemon",
+    "Oil",
+    "Salt",
+    "Rosemary"
+  ],
+  "Arrosto di pesce":[
+    "Seabass",
+    "Salmon",
+    "Lemon",
+    "Oil",
+    "Salt",
+    "Rosemary"
+  ],
+  "Grigliata di carne":[
+    "Beef",
+    "Sausage",
+    "Lemon",
+    "Oil",
+    "Salt",
+    "Rosemary"
+  ],
+  "Grigliata di pesce":[
+    "Seabass",
+    "Salmon",
+    "Lemon",
+    "Oil",
+    "Salt",
+    "Rosemary"
+  ],
+  "Scaloppine ai funghi":[
+    "Beef",
+    "Champignon",
+    "Flour",
+    "Oil",
+    "Salt",
+    "Rosemary"
+  ],
+  "Melanzane ripiene":[
+    "Eggplant",
+    "Beef",
+    "Tomato sauce",
+    "Onion",
+    "Bread",
+    "Parmeasan",
+    "Oil",
+    "Salt"
+  ],
+  "Insalata":[
+    "Lettuce",
+    "Oil",
+    "Salt",
+    "Tomato",
+    "Carrot"
+  ],
+  "Patate al forno":[
+    "Potato",
+    "Oil",
+    "Salt",
+    "Rosemary"
+  ],
+  "Patatine fritte":[
+    "Potato",
+    "Oil",
+    "Salt",
+    "Mayonnaise",
+    "Ketchup"
+  ],
+  "Verdure grigliate":[
+    "Eggplant",
+    "Zucchini",
+    "Tomato",
+    "Oil",
+    "Salt",
+    "Rosemary"
+  ],
+  "Pizza margherita":[
+    "Salt",
+    "Water",
+    "Flour",
+    "Oil",
+    "Mozzarella",
+    "Tomato sauce"
+  ],
+  "Pizza salmone":[
+    "Salt",
+    "Water",
+    "Flour",
+    "Oil",
+    "Mozzarella",
+    "Salmon"
+  ],
+  "Pizza alla boscaiola":[
+    "Salt",
+    "Water",
+    "Flour",
+    "Oil",
+    "Mozzarella",
+    "Champignon",
+    "Sausage"    
+  ],
+  "Pizza norcina":[
+    "Salt",
+    "Water",
+    "Flour",
+    "Oil",
+    "Mozzarella",
+    "Sausage",
+    "Champignon",
+    "Truffle"
+  ],
+  "Pizza vegetariana":[
+    "Salt",
+    "Water",
+    "Flour",
+    "Oil",
+    "Mozzarella",
+    "Eggplant",
+    "Onion",
+    "Zucchini",
+    "Carrot",
+    "Tomato",
+    "Champignon"
+  ],
+  "Pizza patate e bacon":[
+    "Salt",
+    "Water",
+    "Flour",
+    "Oil",
+    "Mozzarella",
+    "Potato",
+    "Bacon",
+    "Tomaro sauce"
+  ],
+  "Pizza al prosciutto":[
+    "Salt",
+    "Water",
+    "Flour",
+    "Oil",
+    "Mozzarella",
+    "Ham",
+    "Tomato sauce"
+  ],
+  "Pizza melanzane e prosciutto":[
+    "Salt",
+    "Water",
+    "Flour",
+    "Oil",
+    "Mozzarella",
+    "Ham",
+    "Tomato sauce",
+    "Eggplant"
+  ],
+  "Pizza zucchine e salsiccia":[
+    "Salt",
+    "Water",
+    "Flour",
+    "Oil",
+    "Mozzarella",
+    "Sausage",
+    "Zucchini"
+  ],
+  "Tiramisù":[
+    "Ladyfinger",
+    "Caffee",
+    "Mascarpone"
+  ],
+  "Macedonia":[
+    "Apple",
+    "Peach",
+    "Strawberry",
+    "Sugar",
+    "Lemon"
+  ]
+}</text>
+    </literalExpression>
+  </decision>
+  <decision id="Decision_16swwyd" name="Meals_for_Final_Ingredients">
+    <informationRequirement id="InformationRequirement_0b429xn">
+      <requiredDecision href="#Decision_0692ng8" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1hrb9pn">
+      <requiredDecision href="#Decision_0j1o0xh" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1cgx0ri" hitPolicy="FIRST">
+      <input id="InputClause_01nn16i" label="Final_Ingredients" camunda:inputVariable="Final_Ingredients">
+        <inputExpression id="LiteralExpression_0utayma" typeRef="list">
+          <text>Final_Ingredients</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0qpkase" label="Meals_for_Final_Ingredients" name="Meals_for_Final_Ingredients" typeRef="list" biodi:width="460" />
+      <rule id="DecisionRule_1lj7dx4">
+        <description>Ritorna i piatti che posso mangiare in base ai final_ingredients</description>
+        <inputEntry id="UnaryTests_15g7rdu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0my2ivz">
+          <text>(for x in get entries (Meals) return if (every y in (get value (Meals,x.key) )satisfies list contains (Final_Ingredients,y) ) then x.key else "") [item != ""]</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_01i4wkf" name="Input" />
+  <decision id="Decision_06hj5rn" name="Kcal">
+    <informationRequirement id="InformationRequirement_0r868oa">
+      <requiredInput href="#InputData_01i4wkf" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_14bmbg3" hitPolicy="FIRST">
+      <input id="InputClause_0r490ma" label="Input" biodi:width="192" camunda:inputVariable="Input">
+        <inputExpression id="LiteralExpression_1bhzjvj" typeRef="string">
+          <text>Input</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0zjenee" label="Meals_for_Kcal_level" name="Meals_for_Kcal_level" typeRef="list" biodi:width="770" />
+      <rule id="DecisionRule_14rxdje">
+        <inputEntry id="UnaryTests_1neiboj">
+          <text>"Low"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tchaio">
+          <text>["Pasta salmone e passata","Pasta alle vongole","Risotto alle vongole","Grigliata di pesce","Grigliata di carne","Scaloppine ai funghi","Insalata", "Verdure grigliate","Macedonia"]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1i5wjbn">
+        <description></description>
+        <inputEntry id="UnaryTests_0ck40wn">
+          <text>"Medium"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0t0ctyj">
+          <text>["Pasta salmone e passata","Pasta alle vongole","Risotto alle vongole","Grigliata di pesce","Grigliata di carne","Scaloppine ai funghi","Insalata", "Verdure grigliate","Macedonia","Arancini al prosciutto","Arancini vegetariani","Risotto salsiccia e funghi","Ravioli vegetariani","Arrosto di pesce","Arrosto di carne","Patate al forno","Pizza margherita","Pizza salmone","Pizza vegetariana"]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0uya0oo">
+        <description></description>
+        <inputEntry id="UnaryTests_1619c6b">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rnhxzy">
+          <text>["Pasta salmone e passata","Pasta alle vongole","Risotto alle vongole","Grigliata di pesce","Grigliata di carne","Scaloppine ai funghi","Insalata", "Verdure grigliate","Macedonia","Arancini al prosciutto","Arancini vegetariani","Risotto salsiccia e funghi","Ravioli vegetariani","Arrosto di pesce","Arrosto di carne","Patate al forno","Pizza margherita","Pizza salmone","Pizza vegetariana","Tartare","Arancini al ragù","Tagliere", "Insalata russa", "Carbonara","Gnocchi al sugo di papera","Ravioli al ragù", "Parmigiana","Melanzane ripiene","Patatine fritte","Pizza alla boscaiola","Pizza zucchine e salsiccia","Pizza norcina","Pizza patate e bacon","Pizza con prosciutto","Pizza melanzane e prosciutto","Tiramisù"]</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <knowledgeSource id="KnowledgeSource_1t451z3" name="Meals" />
+  <decision id="Decision_08g639i" name="Final_Meals">
+    <informationRequirement id="InformationRequirement_0s49igo">
+      <requiredDecision href="#Decision_16swwyd" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0xmy6nc">
+      <requiredDecision href="#Decision_06hj5rn" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_049qxgn" hitPolicy="FIRST">
+      <input id="InputClause_0478hfw" label="Meals_for_Kcal_level" camunda:inputVariable="Meals_for_Kcal_level">
+        <inputExpression id="LiteralExpression_140n4f5" typeRef="list">
+          <text>Meals_for_Kcal_level</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0opua7t" label="Final_Meals" name="Final_Meals" typeRef="list" biodi:width="436" />
+      <rule id="DecisionRule_1waakg3">
+        <description>Se il meals_x_final_Ingredients è presente nella mia lista kcal (in base al kcal che ho scelto) allora lo tengo altrimenti lo rimuovo</description>
+        <inputEntry id="UnaryTests_0liwkxa">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rf83em">
+          <text>(for x in Meals_for_Final_Ingredients return if  list contains (Meals_for_Kcal_level,x) then x else  "") [item != ""]</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape id="DMNShape_1mg4htp" dmnElementRef="Decision_1ukpzfk">
+        <dc:Bounds height="80" width="180" x="1100" y="520" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_110v8kn" dmnElementRef="InputData_1hc07es">
+        <dc:Bounds height="45" width="125" x="1127" y="667" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_07bkmfy" dmnElementRef="InformationRequirement_0lltoy8">
+        <di:waypoint x="1190" y="667" />
+        <di:waypoint x="1190" y="620" />
+        <di:waypoint x="1190" y="600" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1nh90tw" dmnElementRef="Decision_0zu3fo4">
+        <dc:Bounds height="80" width="180" x="820" y="210" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0e8cvid" dmnElementRef="InputData_07i22ag">
+        <dc:Bounds height="45" width="125" x="1357" y="667" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_089eifx" dmnElementRef="InformationRequirement_1q36hw5">
+        <di:waypoint x="1420" y="667" />
+        <di:waypoint x="1420" y="620" />
+        <di:waypoint x="1420" y="600" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_19v6igl" dmnElementRef="Decision_1f60uz7">
+        <dc:Bounds height="80" width="180" x="1330" y="520" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1uj0tna" dmnElementRef="KnowledgeSource_1aei2kw">
+        <dc:Bounds height="63" width="100" x="740" y="58" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1js75v4" dmnElementRef="AuthorityRequirement_1rx21qm">
+        <di:waypoint x="790" y="121" />
+        <di:waypoint x="910" y="210" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1m3msh9" dmnElementRef="InputData_0jq8tkq">
+        <dc:Bounds height="45" width="125" x="477" y="537" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_17oh6sx" dmnElementRef="InformationRequirement_1qlclog">
+        <di:waypoint x="540" y="537" />
+        <di:waypoint x="540" y="470" />
+        <di:waypoint x="540" y="450" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_14fw1az" dmnElementRef="Decision_1mxmnck">
+        <dc:Bounds height="80" width="180" x="450" y="370" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1q88b1b" dmnElementRef="Decision_1k5gdor">
+        <dc:Bounds height="80" width="180" x="1210" y="370" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0wxxhn3" dmnElementRef="InformationRequirement_0beuv9u">
+        <di:waypoint x="1420" y="520" />
+        <di:waypoint x="1330" y="470" />
+        <di:waypoint x="1330" y="450" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_05mee36" dmnElementRef="InformationRequirement_1n5rdj1">
+        <di:waypoint x="1190" y="520" />
+        <di:waypoint x="1270" y="470" />
+        <di:waypoint x="1270" y="450" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1qg4i1n" dmnElementRef="InformationRequirement_0ka0y3m">
+        <di:waypoint x="1210" y="410" />
+        <di:waypoint x="1020" y="410" />
+        <di:waypoint x="1000" y="410" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_09d7wg7" dmnElementRef="InformationRequirement_1dj71wm">
+        <di:waypoint x="630" y="410" />
+        <di:waypoint x="800" y="410" />
+        <di:waypoint x="820" y="410" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0gk4znj" dmnElementRef="InformationRequirement_1dolah8">
+        <di:waypoint x="910" y="290" />
+        <di:waypoint x="910" y="350" />
+        <di:waypoint x="910" y="370" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0nc5q3z" dmnElementRef="Decision_0692ng8">
+        <dc:Bounds height="80" width="180" x="820" y="370" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0mdy5e4" dmnElementRef="Decision_0j1o0xh">
+        <dc:Bounds height="80" width="180" x="570" y="210" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1sqtwfc" dmnElementRef="Decision_16swwyd">
+        <dc:Bounds height="80" width="180" x="790" y="550" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_179hhhx" dmnElementRef="InputData_01i4wkf">
+        <dc:Bounds height="45" width="125" x="477" y="807" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_12mxanm" dmnElementRef="InformationRequirement_0r868oa">
+        <di:waypoint x="540" y="807" />
+        <di:waypoint x="540" y="780" />
+        <di:waypoint x="540" y="760" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1qv80qf" dmnElementRef="Decision_06hj5rn">
+        <dc:Bounds height="80" width="180" x="450" y="680" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_14jrk3z" dmnElementRef="InformationRequirement_0b429xn">
+        <di:waypoint x="910" y="450" />
+        <di:waypoint x="910" y="530" />
+        <di:waypoint x="910" y="550" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0upsb94" dmnElementRef="InformationRequirement_1hrb9pn">
+        <di:waypoint x="660" y="290" />
+        <di:waypoint x="850" y="550" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_12nu4yo" dmnElementRef="AuthorityRequirement_0goigvv">
+        <di:waypoint x="775" y="121" />
+        <di:waypoint x="670" y="210" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1amjnw8" dmnElementRef="KnowledgeSource_1t451z3">
+        <dc:Bounds height="63" width="100" x="360" y="218" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_041544z" dmnElementRef="AuthorityRequirement_1a3yz72">
+        <di:waypoint x="460" y="250" />
+        <di:waypoint x="570" y="250" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_03k8d28" dmnElementRef="InformationRequirement_0s49igo">
+        <di:waypoint x="880" y="630" />
+        <di:waypoint x="880" y="660" />
+        <di:waypoint x="880" y="680" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1yy6hw6" dmnElementRef="InformationRequirement_0xmy6nc">
+        <di:waypoint x="630" y="720" />
+        <di:waypoint x="770" y="720" />
+        <di:waypoint x="790" y="720" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1xr65nt" dmnElementRef="Decision_08g639i">
+        <dc:Bounds height="80" width="180" x="790" y="680" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
