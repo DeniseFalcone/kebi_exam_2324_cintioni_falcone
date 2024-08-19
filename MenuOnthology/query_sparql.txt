@@ -1,0 +1,42 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ex: <http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#>
+
+#Query to get only the preferred meals 
+SELECT DISTINCT ?mealName WHERE {
+    BIND(false AS ?checkLactose)  # Set this to true if allergic to lactose
+    BIND(false AS ?checkGluten)   # Set this to true if allergic to gluten
+    BIND(false AS ?checkVegetarian)  # Set this to true if vegetarian 
+    BIND("Low" AS ?caloriesLevel)  # Set this to "Low", "Medium", "High" or "" if all is fine.
+
+    ?meal rdf:type ex:Meal ;
+          ex:hasName ?mealName ;
+    	  ex:MealIsVegetarian ?isVegetarian;
+          ex:MealHasGluten ?hasGluten;
+          ex:MealHasLactose ?hasLactose.
+    
+    # Lactose filter
+    FILTER (?checkLactose = false || NOT EXISTS {
+        ?meal rdf:type ex:LactoseMeal .
+    })
+    
+    # Gluten filter
+    FILTER (?checkGluten = false || NOT EXISTS {
+        ?meal rdf:type ex:GlutenMeal.
+    })
+    
+    # Vegetarian filter
+    FILTER (?checkVegetarian = false || NOT EXISTS {
+        ?meal rdf:type ex:NoVegMeal.
+    })
+    
+    # Calories filter
+    FILTER (
+        ?caloriesLevel = "" || ?caloriesLevel = "High" ||
+        (
+            (?caloriesLevel = "Low" && EXISTS { ?meal rdf:type ex:LowCaloriesMeal }) ||
+            (?caloriesLevel = "Medium" && NOT EXISTS { ?meal rdf:type ex:HighCaloriesMeal })
+        )
+    )
+
+}

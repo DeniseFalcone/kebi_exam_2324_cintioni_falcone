@@ -1,6 +1,3 @@
-<div class="notebook">
-
-<div class="nb-cell program" name="p1">
 /* Ingredients */
 ingredient(salmon,lactose_free,gluten_free,vegetarian).
 ingredient(coffee,lactose_free,gluten_free,vegetarian).
@@ -85,17 +82,12 @@ meal("Pizza_zucchine_e_salsiccia", [flour, water, salt, oil, mozzarella, sausage
 meal("Tiramisù", [ladyfinger, coffee, mascarpone], high).
 meal("Macedonia", [peach, apple, strawberry, sugar, lemon], low).
 
-
-
 /*Allergies + Vegetarian*/
 is_lactose_free(X) :- ingredient(X,lactose_free,_,_).
 is_gluten_free(X) :- ingredient(X,_,gluten_free,_).
 is_vegetarian(X) :- ingredient(X,_,_,vegetarian).
 
-
 /*check meals */
-
-
 meal_lactose_free(Meal) :- meal(Meal, Ingredients, _), 
     forall(member(Ingredient, Ingredients),is_lactose_free(Ingredient)).
 
@@ -107,26 +99,22 @@ meal_vegetarian(Meal) :-
     meal(Meal, Ingredients, _),
     forall(member(Ingredient, Ingredients), is_vegetarian(Ingredient)).
 
-
-
-
-
 % Calories order
 calorie_order(high, 3).
 calorie_order(medium, 2).
 calorie_order(low, 1).
 
-% Find dishes that meet the calorie criterion
+/* Find dishes that meet the calorie criterion */
 meal_by_calories(CalorieLevel, Meal) :-
     calorie_order(CalorieLevel, Level),
-    meal(Meal, _, Calories),
-    calorie_order(Calories, MealLevel),
-    MealLevel =&lt; Level.
+    meal(Meal, _, MealCalories),
+    calorie_order(MealCalories, MealLevel),
+    MealLevel =< Level.
 
 check_preferences(Meal, Preferences) :-
-    (member(lactose_free, Preferences) -&gt; meal_lactose_free(Meal) ; true),
-    (member(gluten_free, Preferences) -&gt; meal_gluten_free(Meal) ; true),
-    (member(vegetarian, Preferences) -&gt; meal_vegetarian(Meal) ; true).
+    (member(lactose_free, Preferences) -> meal_lactose_free(Meal) ; true),
+    (member(gluten_free, Preferences) -> meal_gluten_free(Meal) ; true),
+    (member(vegetarian, Preferences) -> meal_vegetarian(Meal) ; true).
 
 find_meals(Preferences, CalorieLevel, Meals) :-
     findall(
@@ -134,26 +122,9 @@ find_meals(Preferences, CalorieLevel, Meals) :-
         (
             meal(Meal, _, _),
             check_preferences(Meal, Preferences),
-            meal_by_calories(CalorieLevel,Meal)
+            meal_by_calories(CalorieLevel, Meal)
         ),
         Meals
     ).
 
-debug_meal_lactose_free(Meal) :-
-    meal(Meal, Ingredients, _),
-    writeln(['Meal:',Meal]),
-    writeln(['Ingredients:', Ingredients]),
-    forall(
-        ( member(Ingredient, Ingredients) -&gt;
-            ( is_lactose_free(Ingredient) -&gt;
-                writeln([Ingredient, 'is lactose free'])
-            ; writeln([Ingredient, 'contains lactose'])
-            )
-        ),
-        true
-    ).
-
 /*find_meals([lactose, gluten, no_vegetarian], low, Meals).*/
-</div>
-
-</div>

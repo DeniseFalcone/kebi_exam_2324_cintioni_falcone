@@ -1,0 +1,76 @@
+Rules for gluten/gluten-free ingredients/meals:
+
+1. Gluten ingredients rule: Rule for ingredients with gluten.
+
+	cintioni:Ingredient(?x) ^ cintioni:hasGluten(?x, true) -> cintioni:GlutenIngredient(?x)
+
+2. Gluten-free ingredients rule: Rule for gluten-free Ingredients.
+	
+	cintioni:Ingredient(?x) ^ cintioni:hasGluten(?x, false) -> cintioni:NoGlutenIngredient(?x)
+
+3. Gluten meals rule: Rule to get meals with gluten.
+
+	cintioni:GlutenIngredient(?x) ^ cintioni:isInMeal(?x, ?y) -> cintioni:GlutenMeal(?y)
+
+4. Gluten-free meals rule: Rule to get meals gluten-free.
+	cintioni:Meal(?x) ^ cintioni:MealHasGluten(?x, false) -> cintioni:NoGlutenMeal(?x)
+
+
+Rules for lactose/lactose-free ingredients/meals:
+
+5. Lactose ingredients rule: Rule for Ingredients with lactose.
+
+	cintioni:Ingredient(?x) ^ cintioni:hasLactose(?x, true) -> cintioni:LactoseIngredient(?x)
+
+6. Lactose-free Ingredients rule: Rule for Ingredients lactose-free.
+
+	cintioni:Ingredient(?x) ^ cintioni:hasLactose(?x, false) -> cintioni:NoLactoseIngredient(?x)
+
+7. Lactose meals rule: Rule to get meals with lactose.
+
+	cintioni:LactoseIngredient(?x) ^ cintioni:isInMeal(?x, ?y) -> cintioni:LactoseMeal(?y)
+
+8. Lactose-free meals rule: Rule to get meals lactose-free.
+
+	cintioni:Meal(?x) ^ cintioni:MealHasLactose(?x, false) -> cintioni:NoLactoseMeal(?x)
+
+
+Rules for vegetarian/non-vegetarian ingredients/meals:
+
+9. Vegetarian Ingredient rule: Rule for Vegetarian Ingredients.
+
+	cintioni:Ingredient(?x) ^ cintioni:isVegetarian(?x, true) -> cintioni:VegIngredient(?x)
+
+10. Non vegetarian Ingredient rule: Rule for non Vegetarian Ingredients.
+
+	cintioni:Ingredient(?x) ^ cintioni:isVegetarian(?x, false) -> cintioni:NoVegIngredient(?x)
+
+11. Vegetarian meals rule: Rule to get vegetarian meals.
+
+	cintioni:Meal(?x) ^ cintioni:MealIsVegetarian(?x, true) -> cintioni:VegMeal(?x)
+
+12. Non vegetarian meals rule: Rule to get non vegetarian meals.
+	
+	cintioni:NoVegIngredient(?x) ^ cintioni:isInMeal(?x, ?y) -> cintioni:NoVegMeal(?y)
+
+
+Rule for Low/Medium/High Calories level:
+
+13. Low calories meals rule: Rule for low calories meals.
+
+	cintioni:Meal(?x) ^ cintioni:hasCalories(?x, "Low") -> cintioni:LowCaloriesMeal(?x)
+
+14. Medium calories meals rule: Rule for medium calories meals.
+
+	cintioni:Meal(?x) ^ cintioni:hasCalories(?x, "Medium") -> cintioni:MediumCaloriesMeal(?x)
+
+15. High calories meals rule: Rule for high calories meals.
+
+	cintioni:Meal(?x) ^ cintioni:hasCalories(?x, "High") -> cintioni:HighCaloriesMeal(?x)
+
+
+Reverse rule:
+
+16. Reverse of hasIngredient rule: Reverse rule of hasIngredient.
+
+	cintioni:hasIngredients(?x, ?y) -> cintioni:isInMeal(?y, ?x)
