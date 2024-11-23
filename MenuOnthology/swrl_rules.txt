@@ -54,7 +54,7 @@ Rules for vegetarian/non-vegetarian ingredients/meals:
 	cintioni:NoVegIngredient(?x) ^ cintioni:isInMeal(?x, ?y) -> cintioni:NoVegMeal(?y)
 
 
-Rule for Low/Medium/High Calories level:
+Rules for Low/Medium/High Calories level:
 
 13. Low calories meals rule: Rule for low calories meals.
 
@@ -69,8 +69,107 @@ Rule for Low/Medium/High Calories level:
 	cintioni:Meal(?x) ^ cintioni:hasCalories(?x, "High") -> cintioni:HighCaloriesMeal(?x)
 
 
-Reverse rule:
+Reverse of hasIngredient rule:
 
 16. Reverse of hasIngredient rule: Reverse rule of hasIngredient.
 
 	cintioni:hasIngredients(?x, ?y) -> cintioni:isInMeal(?y, ?x)
+
+
+Rule for all possible combinations of preferences in personalized menu: 
+
+17. Lactose gluten non vegetarian high calories level menu rule: Rule for lactose gluten non vegetarian high calories level menu.
+	
+	cintioni:Menu(cintioni:LactoseGlutenNoVegHighMenu) ^ cintioni:Meal(?meal) ^ cintioni:hasCalories(?meal, "High") -> 	cintioni:hasMeal(cintioni:LactoseGlutenNoVegHighMenu, ?meal)
+
+18. Lactose gluten non vegetarian low calories level menu rule: Rule for lactose gluten non vegetarian low calories level menu.
+	
+	cintioni:Menu(cintioni:LactoseGlutenNoVegLowMenu) ^ cintioni:Meal(?meal) ^ cintioni:hasCalories(?meal, "Low") -> 	cintioni:hasMeal(cintioni:LactoseGlutenNoVegLowMenu, ?meal)
+
+19. Lactose gluten non vegetarian medium calories level menu rule: Rule for lactose gluten non vegetarian medium calories level menu.
+
+	cintioni:Menu(cintioni:LactoseGlutenNoVegMediumMenu) ^ cintioni:Meal(?meal) ^ cintioni:hasCalories(?meal, "Medium") -> 	cintioni:hasMeal(cintioni:LactoseGlutenNoVegMediumMenu, ?meal)
+
+20. Lactose gluten vegetarian high calories level menu rule: Rule for lactose gluten vegetarian high calories level menu.
+	
+	cintioni:Menu(cintioni:LactoseGlutenVegHighMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealIsVegetarian(?meal, true) ^ cintioni:hasCalories(?meal, "High") -> 	cintioni:hasMeal(cintioni:LactoseGlutenVegHighMenu, ?meal)
+
+21. Lactose gluten vegetarian low calories level menu rule: Rule for lactose gluten vegetarian low calories level menu.
+
+	cintioni:Menu(cintioni:LactoseGlutenVegLowMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealIsVegetarian(?meal, true) ^ cintioni:hasCalories(?meal, "Low") -> 	cintioni:hasMeal(cintioni:LactoseGlutenVegLowMenu, ?meal)
+
+22. Lactose gluten vegetarian medium calories level menu rule: Rule for lactose gluten vegetarian medium calories level menu.
+
+	cintioni:Menu(cintioni:LactoseGlutenVegMediumMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealIsVegetarian(?meal, true) ^ cintioni:hasCalories(?meal, "Medium") -> 	cintioni:hasMeal(cintioni:LactoseGlutenVegMediumMenu, ?meal)
+
+23. Lactose gluten-free non vegetarian high calories level menu: Rule for lactose gluten-free non vegetarian high calories level menu.
+
+	cintioni:Menu(cintioni:LactoseGlutenFreeNoVegHighMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealHasGluten(?meal, false) ^ cintioni:hasCalories(?meal, "High") -> 	cintioni:hasMeal(cintioni:LactoseGlutenFreeNoVegHighMenu, ?meal)
+
+24. Lactose gluten-free non vegetarian low calories level menu rule: Rule for lactose gluten-free non vegetarian low calories level menu.
+	
+	cintioni:Menu(cintioni:LactoseGlutenFreeNoVegLowMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealHasGluten(?meal, false) ^ cintioni:hasCalories(?meal, "Low") -> 	cintioni:hasMeal(cintioni:LactoseGlutenFreeNoVegLowMenu, ?meal)
+
+25. Lactose gluten-free non vegetarian medium calories level menu rule: Rule for lactose gluten-free non vegetarian medium calories level menu.
+
+	cintioni:Menu(cintioni:LactoseGlutenFreeNoVegMediumMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealHasGluten(?meal, false) ^ cintioni:hasCalories(?meal, "Medium") -> 	cintioni:hasMeal(cintioni:LactoseGlutenFreeNoVegMediumMenu, ?meal)
+
+26. Lactose gluten-free vegetarian high calories level menu rule: Rule for lactose gluten-free vegetarian high calories level menu.
+
+	cintioni:Menu(cintioni:LactoseGlutenFreeVegHighMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealHasGluten(?meal, false) ^ cintioni:MealIsVegetarian(?meal, true) ^ 	cintioni:hasCalories(?meal, "High") -> cintioni:hasMeal(cintioni:LactoseGlutenFreeVegHighMenu, ?meal)
+
+27. Lactose gluten-free vegetarian low calories level menu rule: Rule for lactose gluten-free vegetarian low calories level menu.
+	
+	cintioni:Menu(cintioni:LactoseGlutenFreeVegLowMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealHasGluten(?meal, false) ^ cintioni:MealIsVegetarian(?meal, true) ^ 	cintioni:hasCalories(?meal, "Low") -> cintioni:hasMeal(cintioni:LactoseGlutenFreeVegLowMenu, ?meal)
+
+28. Lactose gluten-free vegetarian medium calories level menu rule: Rule for lactose gluten-free vegetarian medium calories level menu.
+
+	cintioni:Menu(cintioni:LactoseGlutenFreeVegMediumMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealHasGluten(?meal, false) ^ cintioni:MealIsVegetarian(?meal, true) ^ 	cintioni:hasCalories(?meal, "Medium") -> cintioni:hasMeal(cintioni:LactoseGlutenFreeVegMediumMenu, ?meal)
+
+29. Lactose-free gluten non vegetarian high calories level menu rule: Rule for lactose-free gluten non vegetarian high calories level menu.
+
+	cintioni:Menu(cintioni:LactoseFreeGlutenNoVegHighMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealHasLactose(?meal, false) ^ cintioni:hasCalories(?meal, "High") -> 	cintioni:hasMeal(cintioni:LactoseFreeGlutenNoVegHighMenu, ?meal)
+
+30. Lactose-free gluten non vegetarian low calories level menu rule: Rule for lactose-free gluten non vegetarian low calories level menu.
+
+	cintioni:Menu(cintioni:LactoseFreeGlutenNoVegLowMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealHasLactose(?meal, false) ^ cintioni:hasCalories(?meal, "Low") -> 	cintioni:hasMeal(cintioni:LactoseFreeGlutenNoVegLowMenu, ?meal)
+
+31. Lactose-free gluten non vegetarian medium calories level menu rule: Rule for lactose-free gluten non vegetarian medium calories level menu.
+
+	cintioni:Menu(cintioni:LactoseFreeGlutenNoVegMediumMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealHasLactose(?meal, false) ^ cintioni:hasCalories(?meal, "Medium") -> 	cintioni:hasMeal(cintioni:LactoseFreeGlutenNoVegMediumMenu, ?meal)
+
+32. Lactose-free gluten vegetarian high calories level menu rule: Rule for lactose-free gluten vegetarian high calories level menu.
+
+	cintioni:Menu(cintioni:LactoseFreeGlutenVegHighMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealHasLactose(?meal, false) ^ cintioni:MealIsVegetarian(?meal, true) ^ 	cintioni:hasCalories(?meal, "High") -> cintioni:hasMeal(cintioni:LactoseFreeGlutenVegHighMenu, ?meal)
+
+33. Lactose-free gluten vegetarian low calories level menu rule: Rule for lactose-free gluten vegetarian low calories level menu.
+
+	cintioni:Menu(cintioni:LactoseFreeGlutenVegLowMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealHasLactose(?meal, false) ^ cintioni:MealIsVegetarian(?meal, true) ^ 	cintioni:hasCalories(?meal, "Low") -> cintioni:hasMeal(cintioni:LactoseFreeGlutenVegLowMenu, ?meal)
+
+34. Lactose-free gluten vegetarian medium calories level menu rule: Rule for lactose-free gluten vegetarian medium calories level menu.
+
+	cintioni:Menu(cintioni:LactoseFreeGlutenVegMediumMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealHasLactose(?meal, false) ^ cintioni:MealIsVegetarian(?meal, true) ^ 	cintioni:hasCalories(?meal, "Medium") -> cintioni:hasMeal(cintioni:LactoseFreeGlutenVegMediumMenu, ?meal)
+
+35. Lactose-free gluten-free non vegetarian high calories level menu rule: Rule for lactose-free gluten-free non vegetarian high calories level menu.
+
+	cintioni:Menu(cintioni:LactoseFreeGlutenFreeNoVegHighMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealHasLactose(?meal, false) ^ cintioni:MealHasGluten(?meal, false) ^ 	cintioni:hasCalories(?meal, "High") -> cintioni:hasMeal(cintioni:LactoseFreeGlutenFreeNoVegHighMenu, ?meal)
+
+36. Lactose-free gluten-free non vegetarian low calories level menu rule: Rule for lactose-free gluten-free non vegetarian low calories level menu.
+
+	cintioni:Menu(cintioni:LactoseFreeGlutenFreeNoVegLowMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealHasLactose(?meal, false) ^ cintioni:MealHasGluten(?meal, false) ^ 	cintioni:hasCalories(?meal, "Low") -> cintioni:hasMeal(cintioni:LactoseFreeGlutenFreeNoVegLowMenu, ?meal)
+
+37. Lactose-free gluten-free non vegetarian medium calories level menu rule: Rule for lactose-free gluten-free non vegetarian medium calories level menu.
+
+	cintioni:Menu(cintioni:LactoseFreeGlutenFreeNoVegMediumMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealHasLactose(?meal, false) ^ cintioni:MealHasGluten(?meal, false) 	^ cintioni:hasCalories(?meal, "Medium") -> cintioni:hasMeal(cintioni:LactoseFreeGlutenFreeNoVegMediumMenu, ?meal)
+	
+38. Lactose-free gluten-free vegetarian high calories level menu rule: Rule for lactose-free gluten-free vegetarian high calories level menu.
+
+	cintioni:Menu(cintioni:LactoseFreeGlutenFreeVegHighMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealHasLactose(?meal, false) ^ cintioni:MealHasGluten(?meal, false) ^ 	cintioni:MealIsVegetarian(?meal, true) ^ cintioni:hasCalories(?meal, "High") -> cintioni:hasMeal(cintioni:LactoseFreeGlutenFreeVegHighMenu, ?meal)
+
+39. Lactose-free gluten-free vegetarian low calories level menu rule: Rule for lactose-free gluten-free vegetarian low calories level menu.
+
+	cintioni:Menu(cintioni:LactoseFreeGlutenFreeVegLowMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealHasLactose(?meal, false) ^ cintioni:MealHasGluten(?meal, false) ^ 	cintioni:MealIsVegetarian(?meal, true) ^ cintioni:hasCalories(?meal, "Low") -> cintioni:hasMeal(cintioni:LactoseFreeGlutenFreeVegLowMenu, ?meal)
+
+40. Lactose-free gluten-free vegetarian medium calories level menu rule: Rule for lactose-free gluten-free vegetarian medium calories level menu.
+
+	cintioni:Menu(cintioni:LactoseFreeGlutenFreeVegMediumMenu) ^ cintioni:Meal(?meal) ^ cintioni:MealHasLactose(?meal, false) ^ cintioni:MealHasGluten(?meal, false) ^ 	cintioni:MealIsVegetarian(?meal, true) ^ cintioni:hasCalories(?meal, "Medium") -> cintioni:hasMeal(cintioni:LactoseFreeGlutenFreeVegMediumMenu, ?meal)

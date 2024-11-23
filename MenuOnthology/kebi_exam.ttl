@@ -31,6 +31,12 @@ cintioni:hasIngredients rdf:type owl:ObjectProperty ;
                         rdfs:range cintioni:Ingredient .
 
 
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#hasMeal
+cintioni:hasMeal rdf:type owl:ObjectProperty ;
+                 rdfs:domain cintioni:Menu ;
+                 rdfs:range cintioni:Meal .
+
+
 ###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#isInMeal
 cintioni:isInMeal rdf:type owl:ObjectProperty ;
                   rdfs:domain cintioni:Ingredient ;
@@ -146,6 +152,10 @@ cintioni:Meal rdf:type owl:Class .
 ###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#MediumCaloriesMeal
 cintioni:MediumCaloriesMeal rdf:type owl:Class ;
                             rdfs:subClassOf cintioni:Meal .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Menu
+cintioni:Menu rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#NoGlutenIngredient
@@ -660,6 +670,126 @@ cintioni:Ketchup rdf:type owl:NamedIndividual ,
                  cintioni:hasLactose "false"^^xsd:boolean ;
                  cintioni:hasName "Ketchup" ;
                  cintioni:isVegetarian "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseFreeGlutenFreeNoVegHighMenu
+cintioni:LactoseFreeGlutenFreeNoVegHighMenu rdf:type owl:NamedIndividual ,
+                                                     cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseFreeGlutenFreeNoVegLowMenu
+cintioni:LactoseFreeGlutenFreeNoVegLowMenu rdf:type owl:NamedIndividual ,
+                                                    cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseFreeGlutenFreeNoVegMediumMenu
+cintioni:LactoseFreeGlutenFreeNoVegMediumMenu rdf:type owl:NamedIndividual ,
+                                                       cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseFreeGlutenFreeVegHighMenu
+cintioni:LactoseFreeGlutenFreeVegHighMenu rdf:type owl:NamedIndividual ,
+                                                   cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseFreeGlutenFreeVegLowMenu
+cintioni:LactoseFreeGlutenFreeVegLowMenu rdf:type owl:NamedIndividual ,
+                                                  cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseFreeGlutenFreeVegMediumMenu
+cintioni:LactoseFreeGlutenFreeVegMediumMenu rdf:type owl:NamedIndividual ,
+                                                     cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseFreeGlutenNoVegHighMenu
+cintioni:LactoseFreeGlutenNoVegHighMenu rdf:type owl:NamedIndividual ,
+                                                 cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseFreeGlutenNoVegLowMenu
+cintioni:LactoseFreeGlutenNoVegLowMenu rdf:type owl:NamedIndividual ,
+                                                cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseFreeGlutenNoVegMediumMenu
+cintioni:LactoseFreeGlutenNoVegMediumMenu rdf:type owl:NamedIndividual ,
+                                                   cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseFreeGlutenVegHighMenu
+cintioni:LactoseFreeGlutenVegHighMenu rdf:type owl:NamedIndividual ,
+                                               cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseFreeGlutenVegLowMenu
+cintioni:LactoseFreeGlutenVegLowMenu rdf:type owl:NamedIndividual ,
+                                              cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseFreeGlutenVegMediumMenu
+cintioni:LactoseFreeGlutenVegMediumMenu rdf:type owl:NamedIndividual ,
+                                                 cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseGlutenFreeNoVegHighMenu
+cintioni:LactoseGlutenFreeNoVegHighMenu rdf:type owl:NamedIndividual ,
+                                                 cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseGlutenFreeNoVegLowMenu
+cintioni:LactoseGlutenFreeNoVegLowMenu rdf:type owl:NamedIndividual ,
+                                                cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseGlutenFreeNoVegMediumMenu
+cintioni:LactoseGlutenFreeNoVegMediumMenu rdf:type owl:NamedIndividual ,
+                                                   cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseGlutenFreeVegHighMenu
+cintioni:LactoseGlutenFreeVegHighMenu rdf:type owl:NamedIndividual ,
+                                               cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseGlutenFreeVegLowMenu
+cintioni:LactoseGlutenFreeVegLowMenu rdf:type owl:NamedIndividual ,
+                                              cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseGlutenFreeVegMediumMenu
+cintioni:LactoseGlutenFreeVegMediumMenu rdf:type owl:NamedIndividual ,
+                                                 cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseGlutenNoVegHighMenu
+cintioni:LactoseGlutenNoVegHighMenu rdf:type owl:NamedIndividual ,
+                                             cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseGlutenNoVegLowMenu
+cintioni:LactoseGlutenNoVegLowMenu rdf:type owl:NamedIndividual ,
+                                            cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseGlutenNoVegMediumMenu
+cintioni:LactoseGlutenNoVegMediumMenu rdf:type owl:NamedIndividual ,
+                                               cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseGlutenVegHighMenu
+cintioni:LactoseGlutenVegHighMenu rdf:type owl:NamedIndividual ,
+                                           cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseGlutenVegLowMenu
+cintioni:LactoseGlutenVegLowMenu rdf:type owl:NamedIndividual ,
+                                          cintioni:Menu .
+
+
+###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#LactoseGlutenVegMediumMenu
+cintioni:LactoseGlutenVegMediumMenu rdf:type owl:NamedIndividual ,
+                                             cintioni:Menu .
 
 
 ###  http://www.semanticweb.org/kebi-exam/2023-2024/cintioni.chiara-falcone.denise#Ladyfinger
@@ -1797,6 +1927,8 @@ cintioni:Zucchini rdf:type owl:NamedIndividual ,
 
 :y rdf:type swrl:Variable .
 
+:meal rdf:type swrl:Variable .
+
 [ swrla:isRuleEnabled "true"^^xsd:boolean ;
    rdfs:comment "Rule for ingredients with gluten" ;
    rdfs:label "Gluten ingredients rule" ;
@@ -1954,6 +2086,1074 @@ cintioni:Zucchini rdf:type owl:NamedIndividual ,
                rdf:first [ rdf:type swrl:ClassAtom ;
                            swrl:classPredicate cintioni:LactoseMeal ;
                            swrl:argument1 :y
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose-free gluten-free non vegetarian high calories level menu" ;
+   rdfs:label "Lactose-free gluten-free non vegetarian high calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenFreeNoVegHighMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealHasLactose ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "false"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:MealHasGluten ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "false"^^xsd:boolean
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                                       swrl:propertyPredicate cintioni:hasCalories ;
+                                                                       swrl:argument1 :meal ;
+                                                                       swrl:argument2 "High"
+                                                                     ] ;
+                                                           rdf:rest rdf:nil
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenFreeNoVegHighMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose-free gluten-free non vegetarian low calories level menu" ;
+   rdfs:label "Lactose-free gluten-free non vegetarian low calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenFreeNoVegLowMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealHasLactose ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "false"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:MealHasGluten ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "false"^^xsd:boolean
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                                       swrl:propertyPredicate cintioni:hasCalories ;
+                                                                       swrl:argument1 :meal ;
+                                                                       swrl:argument2 "Low"
+                                                                     ] ;
+                                                           rdf:rest rdf:nil
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenFreeNoVegLowMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose-free gluten-free non vegetarian medium calories level menu" ;
+   rdfs:label "Lactose-free gluten-free non vegetarian medium calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenFreeNoVegMediumMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealHasLactose ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "false"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:MealHasGluten ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "false"^^xsd:boolean
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                                       swrl:propertyPredicate cintioni:hasCalories ;
+                                                                       swrl:argument1 :meal ;
+                                                                       swrl:argument2 "Medium"
+                                                                     ] ;
+                                                           rdf:rest rdf:nil
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenFreeNoVegMediumMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose-free gluten-free vegetarian high calories level menu" ;
+   rdfs:label "Lactose-free gluten-free vegetarian high calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenFreeVegHighMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealHasLactose ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "false"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:MealHasGluten ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "false"^^xsd:boolean
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                                       swrl:propertyPredicate cintioni:MealIsVegetarian ;
+                                                                       swrl:argument1 :meal ;
+                                                                       swrl:argument2 "true"^^xsd:boolean
+                                                                     ] ;
+                                                           rdf:rest [ rdf:type swrl:AtomList ;
+                                                                      rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                                                  swrl:propertyPredicate cintioni:hasCalories ;
+                                                                                  swrl:argument1 :meal ;
+                                                                                  swrl:argument2 "High"
+                                                                                ] ;
+                                                                      rdf:rest rdf:nil
+                                                                    ]
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenFreeVegHighMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose-free gluten-free vegetarian low calories level menu" ;
+   rdfs:label "Lactose-free gluten-free vegetarian low calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenFreeVegLowMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealHasLactose ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "false"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:MealHasGluten ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "false"^^xsd:boolean
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                                       swrl:propertyPredicate cintioni:MealIsVegetarian ;
+                                                                       swrl:argument1 :meal ;
+                                                                       swrl:argument2 "true"^^xsd:boolean
+                                                                     ] ;
+                                                           rdf:rest [ rdf:type swrl:AtomList ;
+                                                                      rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                                                  swrl:propertyPredicate cintioni:hasCalories ;
+                                                                                  swrl:argument1 :meal ;
+                                                                                  swrl:argument2 "Low"
+                                                                                ] ;
+                                                                      rdf:rest rdf:nil
+                                                                    ]
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenFreeVegLowMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose-free gluten-free vegetarian medium calories level menu" ;
+   rdfs:label "Lactose-free gluten-free vegetarian medium calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenFreeVegMediumMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealHasLactose ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "false"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:MealHasGluten ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "false"^^xsd:boolean
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                                       swrl:propertyPredicate cintioni:MealIsVegetarian ;
+                                                                       swrl:argument1 :meal ;
+                                                                       swrl:argument2 "true"^^xsd:boolean
+                                                                     ] ;
+                                                           rdf:rest [ rdf:type swrl:AtomList ;
+                                                                      rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                                                  swrl:propertyPredicate cintioni:hasCalories ;
+                                                                                  swrl:argument1 :meal ;
+                                                                                  swrl:argument2 "Medium"
+                                                                                ] ;
+                                                                      rdf:rest rdf:nil
+                                                                    ]
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenFreeVegMediumMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose-free gluten non vegetarian high calories level menu" ;
+   rdfs:label "Lactose-free gluten non vegetarian high calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenNoVegHighMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealHasLactose ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "false"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:hasCalories ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "High"
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenNoVegHighMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose-free gluten non vegetarian low calories level menu" ;
+   rdfs:label "Lactose-free gluten non vegetarian low calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenNoVegLowMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealHasLactose ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "false"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:hasCalories ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "Low"
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenNoVegLowMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose-free gluten non vegetarian medium calories level menu" ;
+   rdfs:label "Lactose-free gluten non vegetarian medium calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenNoVegMediumMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealHasLactose ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "false"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:hasCalories ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "Medium"
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenNoVegMediumMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose-free gluten vegetarian high calories level menu" ;
+   rdfs:label "Lactose-free gluten vegetarian high calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenVegHighMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealHasLactose ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "false"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:MealIsVegetarian ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "true"^^xsd:boolean
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                                       swrl:propertyPredicate cintioni:hasCalories ;
+                                                                       swrl:argument1 :meal ;
+                                                                       swrl:argument2 "High"
+                                                                     ] ;
+                                                           rdf:rest rdf:nil
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenVegHighMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose-free gluten vegetarian low calories level menu" ;
+   rdfs:label "Lactose-free gluten vegetarian low calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenVegLowMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealHasLactose ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "false"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:MealIsVegetarian ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "true"^^xsd:boolean
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                                       swrl:propertyPredicate cintioni:hasCalories ;
+                                                                       swrl:argument1 :meal ;
+                                                                       swrl:argument2 "Low"
+                                                                     ] ;
+                                                           rdf:rest rdf:nil
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenVegLowMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose-free gluten vegetarian medium calories level menu" ;
+   rdfs:label "Lactose-free gluten vegetarian medium calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenVegMediumMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealHasLactose ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "false"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:MealIsVegetarian ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "true"^^xsd:boolean
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                                       swrl:propertyPredicate cintioni:hasCalories ;
+                                                                       swrl:argument1 :meal ;
+                                                                       swrl:argument2 "Medium"
+                                                                     ] ;
+                                                           rdf:rest rdf:nil
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseFreeGlutenVegMediumMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose gluten-free non vegetarian high calories level menu" ;
+   rdfs:label "Lactose gluten-free non vegetarian high calories level menu" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseGlutenFreeNoVegHighMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealHasGluten ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "false"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:hasCalories ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "High"
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseGlutenFreeNoVegHighMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose gluten-free non vegetarian low calories level menu" ;
+   rdfs:label "Lactose gluten-free non vegetarian low calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseGlutenFreeNoVegLowMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealHasGluten ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "false"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:hasCalories ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "Low"
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseGlutenFreeNoVegLowMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose gluten-free non vegetarian medium calories level menu" ;
+   rdfs:label "Lactose gluten-free non vegetarian medium calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseGlutenFreeNoVegMediumMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealHasGluten ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "false"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:hasCalories ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "Medium"
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseGlutenFreeNoVegMediumMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose gluten-free vegetarian high calories level menu" ;
+   rdfs:label "Lactose gluten-free vegetarian high calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseGlutenFreeVegHighMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealHasGluten ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "false"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:MealIsVegetarian ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "true"^^xsd:boolean
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                                       swrl:propertyPredicate cintioni:hasCalories ;
+                                                                       swrl:argument1 :meal ;
+                                                                       swrl:argument2 "High"
+                                                                     ] ;
+                                                           rdf:rest rdf:nil
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseGlutenFreeVegHighMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose gluten-free vegetarian low calories level menu" ;
+   rdfs:label "Lactose gluten-free vegetarian low calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseGlutenFreeVegLowMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealHasGluten ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "false"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:MealIsVegetarian ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "true"^^xsd:boolean
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                                       swrl:propertyPredicate cintioni:hasCalories ;
+                                                                       swrl:argument1 :meal ;
+                                                                       swrl:argument2 "Low"
+                                                                     ] ;
+                                                           rdf:rest rdf:nil
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseGlutenFreeVegLowMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose gluten-free vegetarian medium calories level menu" ;
+   rdfs:label "Lactose gluten-free vegetarian medium calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseGlutenFreeVegMediumMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealHasGluten ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "false"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:MealIsVegetarian ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "true"^^xsd:boolean
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                                       swrl:propertyPredicate cintioni:hasCalories ;
+                                                                       swrl:argument1 :meal ;
+                                                                       swrl:argument2 "Medium"
+                                                                     ] ;
+                                                           rdf:rest rdf:nil
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseGlutenFreeVegMediumMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose gluten non vegetarian high calories level menu" ;
+   rdfs:label "Lactose gluten non vegetarian high calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseGlutenNoVegHighMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:hasCalories ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "High"
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseGlutenNoVegHighMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose gluten non vegetarian low calories level menu" ;
+   rdfs:label "Lactose gluten non vegetarian low calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseGlutenNoVegLowMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:hasCalories ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "Low"
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseGlutenNoVegLowMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose gluten non vegetarian medium calories level menu" ;
+   rdfs:label "Lactose gluten non vegetarian medium calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseGlutenNoVegMediumMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:hasCalories ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "Medium"
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseGlutenNoVegMediumMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose gluten vegetarian high calories level menu" ;
+   rdfs:label "Lactose gluten vegetarian high calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseGlutenVegHighMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealIsVegetarian ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "true"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:hasCalories ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "High"
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseGlutenVegHighMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose gluten vegetarian low calories level menu" ;
+   rdfs:label "Lactose gluten vegetarian low calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseGlutenVegLowMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealIsVegetarian ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "true"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:hasCalories ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "Low"
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseGlutenVegLowMenu ;
+                           swrl:argument2 :meal
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Rule for lactose gluten vegetarian medium calories level menu" ;
+   rdfs:label "Lactose gluten vegetarian medium calories level menu rule" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate cintioni:Menu ;
+                           swrl:argument1 cintioni:LactoseGlutenVegMediumMenu
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate cintioni:Meal ;
+                                      swrl:argument1 :meal
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate cintioni:MealIsVegetarian ;
+                                                 swrl:argument1 :meal ;
+                                                 swrl:argument2 "true"^^xsd:boolean
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                            swrl:propertyPredicate cintioni:hasCalories ;
+                                                            swrl:argument1 :meal ;
+                                                            swrl:argument2 "Medium"
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate cintioni:hasMeal ;
+                           swrl:argument1 cintioni:LactoseGlutenVegMediumMenu ;
+                           swrl:argument2 :meal
                          ] ;
                rdf:rest rdf:nil
              ]

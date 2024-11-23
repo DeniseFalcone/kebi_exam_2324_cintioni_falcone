@@ -243,3 +243,13 @@ ex:HighCaloriesMealShape
         sh:path ex:hasCalories ;  # Add constraints to hasCalories property
         sh:hasValue "High" ;
     ].
+
+#Shape to add costraints to the Menu class.
+ex:MenuShape
+    a sh:NodeShape ;
+    sh:targetClass ex:Menu ; # Applies to all personalized menu       
+    sh:property [              
+        sh:path ex:hasMeal ;  # Add constraints to hasMeal property
+        sh:class ex:Meal ;
+        sh:severity sh:Warning ;
+    ].
