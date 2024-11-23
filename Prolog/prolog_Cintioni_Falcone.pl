@@ -128,3 +128,4 @@ find_meals(Preferences, CalorieLevel, Meals) :-
     ).
 
 /*find_meals([lactose, gluten, no_vegetarian], low, Meals).*/
+/*find_meals([lactose_free, gluten_free, vegetarian], high, Meals).*/
