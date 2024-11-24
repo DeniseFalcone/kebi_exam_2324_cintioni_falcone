@@ -1,4 +1,4 @@
-\textbf{Personalized Menu Recommendations in Restaurants Using Knowledge Graphs, Ontologies, and Agile BPMN Processes}
+# **Personalized Menu Recommendations in Restaurants Using Knowledge Graphs, Ontologies, and Agile BPMN Processes**
 
 The purpose of this project is to design and develop a sophisticated Knowledge Base
 aimed at generating personalized menus tailored to customers’ specific dietary needs
